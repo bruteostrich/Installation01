@@ -8,6 +8,8 @@ public class NetworkManager : Photon.MonoBehaviour
     public string version = "blah blah"; // string used by photon to seperate different builds of the game, so that old builds wont work with new ones.
     public Color infoColor;
 
+    public GameObject PlayerPrefab;
+
     //[Header("Default Room Properties")]
     private string name = "Installation 01 room";
     private int maxPlayers = 16;
@@ -127,8 +129,37 @@ public class NetworkManager : Photon.MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
+    private void OnCreatedRoom ()
+    {
+        
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     private void OnJoinedRoom()
     {
+        //GameObject[] spawnpoints = GameObject.FindGameObjectsWithTag("GameEntity");
+        //int spawnpoint = Random.Range(0, spawnpoints.Length);
+        //GameObject player = PhotonNetwork.Instantiate("Player", spawnpoints[spawnpoint].transform.position, Quaternion.identity, 0);
+        
+        this.SpawnPlayer();
+    }
+
+    private void Loadlevel ()
+    {
         Application.LoadLevel("DevelopmentScene");
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void SpawnPlayer ()
+    {
+        GameObject player = PhotonNetwork.Instantiate("Player Controller", new Vector3(0, 10, 0), Quaternion.identity, 0);
+
+        
+
+        this.Loadlevel();
     }
 }
