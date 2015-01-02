@@ -1,20 +1,18 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 using ExitGames.Client.Photon;
 
 public class NetworkManager : Photon.MonoBehaviour
 {
     [Header("Network Information")]
-    public string version = "installation 01"; // string used by photon to seperate different builds of the game, so that old builds wont work with new ones.
-    public Text connectionStateText;
+    public string version = "blah blah"; // string used by photon to seperate different builds of the game, so that old builds wont work with new ones.
     public Color infoColor;
 
-    [Header("Default Room Properties")]
-    public string name = "Installation 01 room";
-    public int maxPlayers = 16;
-    public bool visible = true;
-    public bool open = false;
+    //[Header("Default Room Properties")]
+    private string name = "Installation 01 room";
+    private int maxPlayers = 16;
+    private bool visible = true;
+    private bool open = true;
 
     private void Awake()
     {
@@ -22,18 +20,10 @@ public class NetworkManager : Photon.MonoBehaviour
         this.ConnectToServer();
     }
 
-    /*private void Update ()
-    {
-        if (this.connectionStateText)
-            this.connectionStateText.text = PhotonNetwork.connectionStateDetailed.ToString ();
-    }*/
-
     private void OnGUI()
     {
         GUI.color = this.infoColor;
         GUILayout.Label(" " + PhotonNetwork.connectionStateDetailed.ToString());
-        GUILayout.Label(" Players Online: " + PhotonNetwork.countOfPlayers);
-        GUILayout.Label(" Players in Rooms: " + PhotonNetwork.countOfPlayersInRooms);
 
         if (PhotonNetwork.inRoom)
         {
@@ -42,12 +32,16 @@ public class NetworkManager : Photon.MonoBehaviour
 
             foreach (PhotonPlayer player in PhotonNetwork.playerList)
             {
-                if (player.name.Length < 1)
-                    player.name = "Installation 01 Player " + player.ID.ToString();
-
-                GUILayout.Label(player.name);
+                GUI.color = Color.white;
+                GUILayout.Label(" Installation 01 Team Member " + player.name, "box");
+                GUI.color = this.infoColor;
             }
 
+        }
+        else
+        {
+            GUILayout.Label(" Players Online: " + PhotonNetwork.countOfPlayers);
+            GUILayout.Label(" Players in Rooms: " + PhotonNetwork.countOfPlayersInRooms);
         }
     }
 
@@ -124,6 +118,9 @@ public class NetworkManager : Photon.MonoBehaviour
     /// </summary>
     private void OnPhotonRandomJoinFailed()
     {
+        if (!PhotonNetwork.connected)
+            return;
+
         this.CreateRoom(this.name, this.maxPlayers, this.open, this.visible);
     }
 
