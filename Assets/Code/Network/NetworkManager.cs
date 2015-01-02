@@ -11,6 +11,7 @@ public class NetworkManager : Photon.MonoBehaviour
     private void Awake ()
     {
         DontDestroyOnLoad (this.gameObject);
+        this.ConnectToServer ();
     }
 
     private void Update ()
