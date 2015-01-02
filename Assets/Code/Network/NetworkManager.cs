@@ -5,8 +5,15 @@ using ExitGames.Client.Photon;
 
 public class NetworkManager : Photon.MonoBehaviour 
 {
+    [Header("Network Information")]
     public string version = "installation 01"; // string used by photon to seperate different builds of the game, so that old builds wont work with new ones.
     public Text connectionStateText;
+
+    [Header("Default Room Properties")]
+    public string name = "Installation 01 room";
+    public int maxPlayers = 16;
+    public bool visible = true;
+    public bool open = false;
 
     private void Awake ()
     {
@@ -39,7 +46,7 @@ public class NetworkManager : Photon.MonoBehaviour
     /// <summary>
     /// Disconnects from the photon server, returns if we are not connected to the photon server.
     /// </summary>
-    public static void DisconnectFromServer ()
+    public void DisconnectFromServer ()
     {
         if (!PhotonNetwork.connected)
             return;
@@ -51,7 +58,7 @@ public class NetworkManager : Photon.MonoBehaviour
     /// Join room on the photon server.
     /// </summary>
     /// <param name="room"></param>
-	public static void JoinRoom (string room)
+	public void JoinRoom (string room)
     {
         PhotonNetwork.JoinRoom (room);
     }
@@ -59,7 +66,7 @@ public class NetworkManager : Photon.MonoBehaviour
     /// <summary>
     /// Joins first available room on the photon network.
     /// </summary>
-    public static void JoinRandomRoom ()
+    public void JoinRandomRoom ()
     {
         PhotonNetwork.JoinRandomRoom ();
     }
@@ -67,7 +74,7 @@ public class NetworkManager : Photon.MonoBehaviour
     /// <summary>
     /// Leave the current room, returns if we are not in a room.
     /// </summary>
-    public static void LeaveRoom ()
+    public void LeaveRoom ()
     {
         if (!PhotonNetwork.inRoom)
             return;
@@ -82,9 +89,25 @@ public class NetworkManager : Photon.MonoBehaviour
     /// <param name="maxplayers"></param>
     /// <param name="open"></param>
     /// <param name="visible"></param>
-    public static void CreateRoom (string name, int maxplayers, bool open, bool visible)
+    public void CreateRoom (string name, int maxplayers, bool open, bool visible)
     {
         RoomOptions options = new RoomOptions() { maxPlayers = maxplayers, isOpen = open, isVisible = visible };
         PhotonNetwork.CreateRoom (name, options, TypedLobby.Default);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void OnPhotonRandomJoinFailed ()
+    {
+        this.CreateRoom (this.name, this.maxPlayers, this.open, this.visible);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void OnJoinedRoom ()
+    {
+        Application.LoadLevel ("DevelopmentScene");
     }
 }
