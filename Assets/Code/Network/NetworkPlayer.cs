@@ -3,6 +3,8 @@ using System.Collections;
 
 public class NetworkPlayer : Photon.MonoBehaviour 
 {
+    public GameObject PlayerModel;
+
     private void Awake ()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -12,11 +14,15 @@ public class NetworkPlayer : Photon.MonoBehaviour
     {
         if (photonView.isMine == true)
         {
+            PlayerModel.SetActive(false);
+
             foreach (Behaviour childCompnent in this.gameObject.GetComponentsInChildren<Behaviour>())
                 childCompnent.enabled = true;
         }
         else
         {
+            PlayerModel.SetActive(true);
+
             foreach (Behaviour childCompnent in this.gameObject.GetComponentsInChildren<Behaviour>())
                 childCompnent.enabled = false;
         }
