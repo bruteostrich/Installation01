@@ -3,12 +3,12 @@ using System.Collections;
 
 public class NetworkPlayer : Photon.MonoBehaviour 
 {
-    private void Start ()
+    private void Awake ()
     {
-        DontDestroyOnLoad (this.gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Update ()
+    private void Start ()
     {
         if (photonView.isMine == true)
         {
@@ -49,34 +49,6 @@ public class NetworkPlayer : Photon.MonoBehaviour
         {
             foreach (Behaviour childCompnent in this.gameObject.GetComponentsInChildren<Behaviour>())
                 childCompnent.enabled = false;
-
-            /*this.GetComponent<CharacterController>().enabled = false;
-            this.GetComponent<vp_FPController>().enabled = false;
-            this.GetComponent<vp_FPInput>().enabled = false;
-            this.GetComponent<vp_FPPlayerEventHandler>().enabled = false;
-            this.GetComponent<vp_FPWeaponHandler>().enabled = false;
-            this.GetComponent<vp_ItemIdentifier>().enabled = false;
-            GameObject FPSCamera = this.gameObject.transform.FindChild("FPSCamera").gameObject;
-            FPSCamera.SetActive(false);
-            FPSCamera.GetComponent<AudioListener>().enabled = false;
-            FPSCamera.GetComponent<Camera>().enabled = false;
-            FPSCamera.GetComponent<vp_FPCamera>().enabled = false;
-
-            GameObject WeaponCamera = FPSCamera.gameObject.transform.FindChild("WeaponCamera").gameObject;
-            WeaponCamera.SetActive(false);
-            WeaponCamera.GetComponent<Camera>().enabled = false;
-
-            GameObject AR = FPSCamera.gameObject.transform.FindChild("AR").gameObject;
-            AR.SetActive(false);
-            AR.GetComponent<AudioSource>().enabled = false;
-            AR.GetComponent<vp_FPWeapon>().enabled = false;
-            AR.GetComponent<vp_FPWeaponShooter>().enabled = false;
-            AR.GetComponent<vp_FPWeaponReloader>().enabled = false;
-            AR.GetComponent<vp_ItemIdentifier>().enabled = false;
-
-            GameObject MuzzleFlash = FPSCamera.gameObject.transform.FindChild("ARMuzzleFlash").gameObject;
-            MuzzleFlash.SetActive(false);
-            MuzzleFlash.GetComponent<vp_MuzzleFlash>().enabled = false;*/
         }
     }
 }
