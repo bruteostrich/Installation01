@@ -5,25 +5,34 @@ using ExitGames.Client.Photon;
 public class NetworkManager : Photon.MonoBehaviour
 {
     [Header("Network Information")]
-    public string version = "blah blah"; // string used by photon to seperate different builds of the game, so that old builds wont work with new ones.
+    // string used by photon to seperate different builds of the game, so that old builds wont work with new ones.
+    public string version = "Installation 01 v01";
+    // color of network debug text in the top right corner of screen (debug only)
     public Color infoColor;
 
+    // The player prefab from the resources folder
     public GameObject PlayerPrefab;
 
-    //[Header("Default Room Properties")]
+    // Default / Fallback room properties
+    // The default room name
     private string name = "Installation 01 room";
+    // The default max players
     private int maxPlayers = 16;
+    // Whether or not the room is visible on the network
     private bool visible = true;
+    // If the room is visible, is it open or private
     private bool open = true;
 
     private void Awake()
     {
+        // Keep gameobject between scenes to handle network events
         DontDestroyOnLoad(this.gameObject);
         this.ConnectToServer();
     }
 
     private void OnGUI()
     {
+        // This is strictly for network debugging (do not ship)
         GUI.color = this.infoColor;
         GUILayout.Label(" " + PhotonNetwork.connectionStateDetailed.ToString());
 
@@ -47,96 +56,67 @@ public class NetworkManager : Photon.MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Established initial connection to the photon server, returns if we are already connected to the server.
-    /// </summary>
     public void ConnectToServer()
     {
+        // If a connection already exists do nothing
         if (PhotonNetwork.connected)
             return;
 
+        // set basic photon network parameters
         PhotonNetwork.offlineMode = false;
         PhotonNetwork.autoCleanUpPlayerObjects = true;
         PhotonNetwork.automaticallySyncScene = true;
         PhotonNetwork.autoJoinLobby = true;
 
+        // Connect to best available server using the version variable creaed earlier
         PhotonNetwork.ConnectToBestCloudServer(this.version);
     }
 
-    /// <summary>
-    /// Disconnects from the photon server, returns if we are not connected to the photon server.
-    /// </summary>
     public void DisconnectFromServer()
     {
+        // If we are not connected to the server, do nothing
         if (!PhotonNetwork.connected)
             return;
 
+        // Disconnect from the photon server
         PhotonNetwork.LeaveLobby();
     }
 
-    /// <summary>
-    /// Join room on the photon server.
-    /// </summary>
-    /// <param name="room"></param>
     public void JoinRoom(string room)
     {
+        // Join a specific room
         PhotonNetwork.JoinRoom(room);
     }
 
-    /// <summary>
-    /// Joins first available room on the photon network.
-    /// </summary>
     public void JoinRandomRoom()
     {
+        // Join a random room on the network
         PhotonNetwork.JoinRandomRoom();
     }
 
-    /// <summary>
-    /// Leave the current room, returns if we are not in a room.
-    /// </summary>
     public void LeaveRoom()
     {
+        // If we are not in a room, do nothing
         if (!PhotonNetwork.inRoom)
             return;
 
+        // Leave the network room
         PhotonNetwork.LeaveRoom();
     }
 
-    /// <summary>
-    /// Creates a new room on the photon server.
-    /// </summary>
-    /// <param name="name"></param>
-    /// <param name="maxplayers"></param>
-    /// <param name="open"></param>
-    /// <param name="visible"></param>
     public void CreateRoom(string name, int maxplayers, bool open, bool visible)
     {
+        // Create a new room using the given parameters
         RoomOptions options = new RoomOptions() { maxPlayers = maxplayers, isOpen = open, isVisible = visible };
         PhotonNetwork.CreateRoom(name, options, TypedLobby.Default);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     private void OnPhotonRandomJoinFailed()
     {
-        if (!PhotonNetwork.connected)
-            return;
-
+        // If we fail to join a random room, create a new room
         this.CreateRoom(this.name, this.maxPlayers, this.open, this.visible);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    private void OnCreatedRoom ()
-    {
-        
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
     private void OnJoinedRoom()
     {
         //GameObject[] spawnpoints = GameObject.FindGameObjectsWithTag("GameEntity");
@@ -151,14 +131,9 @@ public class NetworkManager : Photon.MonoBehaviour
         Application.LoadLevel("DevelopmentScene");
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     private void SpawnPlayer ()
     {
         GameObject player = PhotonNetwork.Instantiate("Player Controller", new Vector3(0, 10, 0), Quaternion.identity, 0);
-
-        
 
         this.Loadlevel();
     }
