@@ -55,6 +55,15 @@ ModelImporter:
     100098: Wall.001
     100100: CornerEdge.004
     100102: CornerEdge.005
+    100104: Bridge.014
+    100106: Bridge.015
+    100108: Edge.022
+    100110: Edge.023
+    100112: Edge.024
+    100114: Edge.025
+    100116: Wall.000
+    100118: Wall.002
+    100120: Wall.003
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -107,6 +116,15 @@ ModelImporter:
     400098: Wall.001
     400100: CornerEdge.004
     400102: CornerEdge.005
+    400104: Bridge.014
+    400106: Bridge.015
+    400108: Edge.022
+    400110: Edge.023
+    400112: Edge.024
+    400114: Edge.025
+    400116: Wall.000
+    400118: Wall.002
+    400120: Wall.003
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -158,6 +176,15 @@ ModelImporter:
     2300096: Wall.001
     2300098: CornerEdge.004
     2300100: CornerEdge.005
+    2300102: Bridge.014
+    2300104: Bridge.015
+    2300106: Edge.022
+    2300108: Edge.023
+    2300110: Edge.024
+    2300112: Edge.025
+    2300114: Wall.000
+    2300116: Wall.002
+    2300118: Wall.003
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -209,6 +236,15 @@ ModelImporter:
     3300096: Wall.001
     3300098: CornerEdge.004
     3300100: CornerEdge.005
+    3300102: Bridge.014
+    3300104: Bridge.015
+    3300106: Edge.022
+    3300108: Edge.023
+    3300110: Edge.024
+    3300112: Edge.025
+    3300114: Wall.000
+    3300116: Wall.002
+    3300118: Wall.003
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -260,6 +296,15 @@ ModelImporter:
     4300096: Glass
     4300098: CornerEdge.004
     4300100: CornerEdge.005
+    4300102: Bridge.015
+    4300104: Edge.025
+    4300106: Edge.024
+    4300108: Wall.002
+    4300110: Wall.003
+    4300112: Wall.000
+    4300114: Edge.023
+    4300116: Edge.022
+    4300118: Bridge.014
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -311,6 +356,15 @@ ModelImporter:
     6400096: Wall.001
     6400098: CornerEdge.004
     6400100: CornerEdge.005
+    6400102: Bridge.014
+    6400104: Bridge.015
+    6400106: Edge.022
+    6400108: Edge.023
+    6400110: Edge.024
+    6400112: Edge.025
+    6400114: Wall.000
+    6400116: Wall.002
+    6400118: Wall.003
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -22,6 +22,7 @@ public class NetworkManager : Photon.MonoBehaviour
     private bool visible = true;
     // If the room is visible, is it open or private
     private bool open = true;
+    public bool showBrowser = false;
 
     private void Awake()
     {
@@ -53,6 +54,22 @@ public class NetworkManager : Photon.MonoBehaviour
         {
             GUILayout.Label(" Players Online: " + PhotonNetwork.countOfPlayers);
             GUILayout.Label(" Players in Rooms: " + PhotonNetwork.countOfPlayersInRooms);
+        }
+
+        if (this.showBrowser == true)
+        {
+            GUI.color = Color.white;
+            GUILayout.BeginArea (new Rect (Screen.width / 2, 0, Screen.width / 2, Screen.height));
+
+            GUILayout.Label("Roomlist (this ugly interface is temporary, ignore its ugliness)", "Box");
+            foreach (Room room in PhotonNetwork.GetRoomList())
+            {
+                GUILayout.BeginArea (new Rect (Screen.width / 2, 0, Screen.width / 2, 10f));
+                GUILayout.Button (room.name.ToString(), "button");
+                GUILayout.EndArea ();
+            }
+
+            GUILayout.EndArea ();
         }
     }
 
