@@ -53,6 +53,8 @@ ModelImporter:
     100094: SmallPillar.001
     100096: SmallPillar.002
     100098: Wall.001
+    100100: CornerEdge.004
+    100102: CornerEdge.005
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -103,6 +105,8 @@ ModelImporter:
     400094: SmallPillar.001
     400096: SmallPillar.002
     400098: Wall.001
+    400100: CornerEdge.004
+    400102: CornerEdge.005
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -152,6 +156,8 @@ ModelImporter:
     2300092: SmallPillar.001
     2300094: SmallPillar.002
     2300096: Wall.001
+    2300098: CornerEdge.004
+    2300100: CornerEdge.005
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -201,6 +207,8 @@ ModelImporter:
     3300092: SmallPillar.001
     3300094: SmallPillar.002
     3300096: Wall.001
+    3300098: CornerEdge.004
+    3300100: CornerEdge.005
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -250,6 +258,8 @@ ModelImporter:
     4300092: Edge.002
     4300094: Bridge.001
     4300096: Glass
+    4300098: CornerEdge.004
+    4300100: CornerEdge.005
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -299,6 +309,8 @@ ModelImporter:
     6400092: SmallPillar.001
     6400094: SmallPillar.002
     6400096: Wall.001
+    6400098: CornerEdge.004
+    6400100: CornerEdge.005
     9500000: //RootNode
   materials:
     importMaterials: 1
