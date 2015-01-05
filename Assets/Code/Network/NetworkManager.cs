@@ -5,23 +5,16 @@ using ExitGames.Client.Photon;
 public class NetworkManager : Photon.MonoBehaviour
 {
     [Header("Network Information")]
-    // string used by photon to seperate different builds of the game, so that old builds wont work with new ones.
-    public string version = "Installation 01 v01";
-    // color of network debug text in the top right corner of screen (debug only)
-    public Color infoColor;
+    public string version = "Installation 01 v01";      // string used by photon to seperate different builds of the game, so that old builds wont work with new ones.
+    public Color infoColor;                             // color of network debug text in the top right corner of screen (debug only)
 
-    // The player prefab from the resources folder
-    public GameObject PlayerPrefab;
+    public GameObject PlayerPrefab;                     // The player prefab from the resources folder
 
     // Default / Fallback room properties
-    // The default room name
-    private string name = "Installation 01 room";
-    // The default max players
-    private int maxPlayers = 16;
-    // Whether or not the room is visible on the network
-    private bool visible = true;
-    // If the room is visible, is it open or private
-    private bool open = true;
+    private string name = "Installation 01 room";       // The default room name
+    private int maxPlayers = 16;                        // The default max players
+    private bool visible = true;                        // Whether or not the room is visible on the network
+    private bool open = true;                           // If the room is visible, is it open or private
     public bool showBrowser = false;
 
     private void Awake()
@@ -30,6 +23,8 @@ public class NetworkManager : Photon.MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         this.ConnectToServer();
     }
+
+    #region For Testing / Debugging Only
 
     private void OnGUI()
     {
@@ -56,22 +51,48 @@ public class NetworkManager : Photon.MonoBehaviour
             GUILayout.Label(" Players in Rooms: " + PhotonNetwork.countOfPlayersInRooms);
         }
 
-        if (this.showBrowser == true)
+        if (this.showBrowser == true && PhotonNetwork.insideLobby)
         {
             GUI.color = Color.white;
             GUILayout.BeginArea (new Rect (Screen.width / 2, 0, Screen.width / 2, Screen.height));
 
             GUILayout.Label("Roomlist (this ugly interface is temporary, ignore its ugliness)", "Box");
-            foreach (Room room in PhotonNetwork.GetRoomList())
+
+            if (GUILayout.Button("Join random room"))
+                this.JoinRandomRoom ();
+
+            if (PhotonNetwork.GetRoomList().Length < 1)
+                GUILayout.Label("There are currently no rooms, check back later", "Box");
+
+            foreach (RoomInfo room in PhotonNetwork.GetRoomList())
             {
-                GUILayout.BeginArea (new Rect (Screen.width / 2, 0, Screen.width / 2, 10f));
-                GUILayout.Button (room.name.ToString(), "button");
-                GUILayout.EndArea ();
+                if (GUILayout.Button (room.name.ToString()))
+                    PhotonNetwork.JoinRoom (room.name);
             }
 
             GUILayout.EndArea ();
         }
+        // This is strictly for network debugging (do not ship)
     }
+
+    public void EnableServerList ()
+    {
+        // This is strictly for network debugging (do not ship)
+        if (this.showBrowser == false)
+            this.showBrowser = true;
+        else
+            this.showBrowser = false;
+        // This is strictly for network debugging (do not ship)
+    }
+
+    public void DisableServerList ()
+    {
+        // This is strictly for network debugging (do not ship)
+        this.showBrowser = false;
+        // This is strictly for network debugging (do not ship)
+    }
+
+    #endregion
 
     public void ConnectToServer()
     {
