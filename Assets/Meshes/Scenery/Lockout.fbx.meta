@@ -64,6 +64,8 @@ ModelImporter:
     100116: Wall.000
     100118: Wall.002
     100120: Wall.003
+    100122: Bridge.016
+    100124: Edge.026
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -125,6 +127,8 @@ ModelImporter:
     400116: Wall.000
     400118: Wall.002
     400120: Wall.003
+    400122: Bridge.016
+    400124: Edge.026
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -185,6 +189,8 @@ ModelImporter:
     2300114: Wall.000
     2300116: Wall.002
     2300118: Wall.003
+    2300120: Bridge.016
+    2300122: Edge.026
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -245,6 +251,8 @@ ModelImporter:
     3300114: Wall.000
     3300116: Wall.002
     3300118: Wall.003
+    3300120: Bridge.016
+    3300122: Edge.026
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -305,6 +313,8 @@ ModelImporter:
     4300114: Edge.023
     4300116: Edge.022
     4300118: Bridge.014
+    4300120: Edge.026
+    4300122: Bridge.016
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -365,6 +375,8 @@ ModelImporter:
     6400114: Wall.000
     6400116: Wall.002
     6400118: Wall.003
+    6400120: Bridge.016
+    6400122: Edge.026
     9500000: //RootNode
   materials:
     importMaterials: 1
