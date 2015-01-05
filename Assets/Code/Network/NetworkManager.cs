@@ -58,11 +58,18 @@ public class NetworkManager : Photon.MonoBehaviour
 
             GUILayout.Label("Roomlist (this ugly interface is temporary, ignore its ugliness)", "Box");
 
-            if (GUILayout.Button("Join random room"))
-                this.JoinRandomRoom ();
-
             if (PhotonNetwork.GetRoomList().Length < 1)
+            {
                 GUILayout.Label("There are currently no rooms, check back later", "Box");
+
+                if (GUILayout.Button("Create new room"))
+                    this.JoinRandomRoom();
+            }
+            else
+            {
+                if (GUILayout.Button("Join random room"))
+                    this.JoinRandomRoom();
+            }
 
             foreach (RoomInfo room in PhotonNetwork.GetRoomList())
             {
