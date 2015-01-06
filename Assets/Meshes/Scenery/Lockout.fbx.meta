@@ -79,6 +79,16 @@ ModelImporter:
     100146: MediumPillar.008
     100148: MediumPillar.009
     100150: MediumPillar.010
+    100152: Bridge.019
+    100154: Edge.028
+    100156: Edge.029
+    100158: Edge.030
+    100160: Edge.031
+    100162: Edge.032
+    100164: Edge.033
+    100166: Edge.034
+    100168: Edge.035
+    100170: Edge.036
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -155,6 +165,16 @@ ModelImporter:
     400146: MediumPillar.008
     400148: MediumPillar.009
     400150: MediumPillar.010
+    400152: Bridge.019
+    400154: Edge.028
+    400156: Edge.029
+    400158: Edge.030
+    400160: Edge.031
+    400162: Edge.032
+    400164: Edge.033
+    400166: Edge.034
+    400168: Edge.035
+    400170: Edge.036
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -230,6 +250,16 @@ ModelImporter:
     2300144: MediumPillar.008
     2300146: MediumPillar.009
     2300148: MediumPillar.010
+    2300150: Bridge.019
+    2300152: Edge.028
+    2300154: Edge.029
+    2300156: Edge.030
+    2300158: Edge.031
+    2300160: Edge.032
+    2300162: Edge.033
+    2300164: Edge.034
+    2300166: Edge.035
+    2300168: Edge.036
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -305,6 +335,16 @@ ModelImporter:
     3300144: MediumPillar.008
     3300146: MediumPillar.009
     3300148: MediumPillar.010
+    3300150: Bridge.019
+    3300152: Edge.028
+    3300154: Edge.029
+    3300156: Edge.030
+    3300158: Edge.031
+    3300160: Edge.032
+    3300162: Edge.033
+    3300164: Edge.034
+    3300166: Edge.035
+    3300168: Edge.036
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -379,6 +419,15 @@ ModelImporter:
     4300142: MediumPillar.008
     4300144: Bridge.018
     4300146: MediumPillar.010
+    4300148: Edge.036
+    4300150: Edge.030
+    4300152: Edge.031
+    4300154: Edge.029
+    4300158: Edge.034
+    4300160: Bridge.019
+    4300162: Edge.033
+    4300164: Edge.032
+    4300166: Edge.028
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -454,6 +503,16 @@ ModelImporter:
     6400144: MediumPillar.008
     6400146: MediumPillar.009
     6400148: MediumPillar.010
+    6400150: Bridge.019
+    6400152: Edge.028
+    6400154: Edge.029
+    6400156: Edge.030
+    6400158: Edge.031
+    6400160: Edge.032
+    6400162: Edge.033
+    6400164: Edge.034
+    6400166: Edge.035
+    6400168: Edge.036
     9500000: //RootNode
   materials:
     importMaterials: 1
