@@ -89,6 +89,7 @@ ModelImporter:
     100166: Edge.034
     100168: Edge.035
     100170: Edge.036
+    100172: Bridge.020
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -175,6 +176,7 @@ ModelImporter:
     400166: Edge.034
     400168: Edge.035
     400170: Edge.036
+    400172: Bridge.020
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -260,6 +262,7 @@ ModelImporter:
     2300164: Edge.034
     2300166: Edge.035
     2300168: Edge.036
+    2300170: Bridge.020
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -345,6 +348,7 @@ ModelImporter:
     3300164: Edge.034
     3300166: Edge.035
     3300168: Edge.036
+    3300170: Bridge.020
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -423,6 +427,7 @@ ModelImporter:
     4300150: Edge.030
     4300152: Edge.031
     4300154: Edge.029
+    4300156: Bridge.020
     4300158: Edge.034
     4300160: Bridge.019
     4300162: Edge.033
@@ -513,6 +518,7 @@ ModelImporter:
     6400164: Edge.034
     6400166: Edge.035
     6400168: Edge.036
+    6400170: Bridge.020
     9500000: //RootNode
   materials:
     importMaterials: 1
