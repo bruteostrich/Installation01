@@ -78,6 +78,7 @@ ModelImporter:
     100144: Bridge.018
     100146: MediumPillar.008
     100148: MediumPillar.009
+    100150: MediumPillar.010
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -153,6 +154,7 @@ ModelImporter:
     400144: Bridge.018
     400146: MediumPillar.008
     400148: MediumPillar.009
+    400150: MediumPillar.010
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -227,6 +229,7 @@ ModelImporter:
     2300142: Bridge.018
     2300144: MediumPillar.008
     2300146: MediumPillar.009
+    2300148: MediumPillar.010
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -301,6 +304,7 @@ ModelImporter:
     3300142: Bridge.018
     3300144: MediumPillar.008
     3300146: MediumPillar.009
+    3300148: MediumPillar.010
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -374,6 +378,7 @@ ModelImporter:
     4300140: MediumPillar.009
     4300142: MediumPillar.008
     4300144: Bridge.018
+    4300146: MediumPillar.010
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -448,6 +453,7 @@ ModelImporter:
     6400142: Bridge.018
     6400144: MediumPillar.008
     6400146: MediumPillar.009
+    6400148: MediumPillar.010
     9500000: //RootNode
   materials:
     importMaterials: 1
