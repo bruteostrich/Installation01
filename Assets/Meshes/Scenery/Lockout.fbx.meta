@@ -104,6 +104,9 @@ ModelImporter:
     100196: TowerCapR.000
     100198: TowerRoomFloorB.000
     100200: TowerRoomFloorT.000
+    100202: Plane
+    100204: Plane.001
+    100206: Plane.002
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -205,6 +208,9 @@ ModelImporter:
     400196: TowerCapR.000
     400198: TowerRoomFloorB.000
     400200: TowerRoomFloorT.000
+    400202: Plane
+    400204: Plane.001
+    400206: Plane.002
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -305,6 +311,9 @@ ModelImporter:
     2300194: TowerCapR.000
     2300196: TowerRoomFloorB.000
     2300198: TowerRoomFloorT.000
+    2300200: Plane
+    2300202: Plane.001
+    2300204: Plane.002
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -405,6 +414,9 @@ ModelImporter:
     3300194: TowerCapR.000
     3300196: TowerRoomFloorB.000
     3300198: TowerRoomFloorT.000
+    3300200: Plane
+    3300202: Plane.001
+    3300204: Plane.002
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -503,6 +515,10 @@ ModelImporter:
     4300190: TowerCapR.000
     4300192: TowerRoomFloorB.000
     4300194: TowerRoomFloorT.000
+    4300196: Plane
+    4300198: Edge.035
+    4300200: Plane.002
+    4300202: Plane.001
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -603,6 +619,9 @@ ModelImporter:
     6400194: TowerCapR.000
     6400196: TowerRoomFloorB.000
     6400198: TowerRoomFloorT.000
+    6400200: Plane
+    6400202: Plane.001
+    6400204: Plane.002
     9500000: //RootNode
   materials:
     importMaterials: 1
