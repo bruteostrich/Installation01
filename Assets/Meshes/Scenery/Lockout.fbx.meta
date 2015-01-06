@@ -90,6 +90,20 @@ ModelImporter:
     100168: Edge.035
     100170: Edge.036
     100172: Bridge.020
+    100174: LargePillar.000
+    100176: LargePillar.002
+    100178: LibraryBack.000
+    100180: LibraryBeam.000
+    100182: LibraryFloorB.000
+    100184: LibraryFloorT.000
+    100186: LibraryL.000
+    100188: LibraryM.000
+    100190: libraryR.00
+    100192: Tower.000
+    100194: TowerCapL.000
+    100196: TowerCapR.000
+    100198: TowerRoomFloorB.000
+    100200: TowerRoomFloorT.000
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -177,6 +191,20 @@ ModelImporter:
     400168: Edge.035
     400170: Edge.036
     400172: Bridge.020
+    400174: LargePillar.000
+    400176: LargePillar.002
+    400178: LibraryBack.000
+    400180: LibraryBeam.000
+    400182: LibraryFloorB.000
+    400184: LibraryFloorT.000
+    400186: LibraryL.000
+    400188: LibraryM.000
+    400190: libraryR.00
+    400192: Tower.000
+    400194: TowerCapL.000
+    400196: TowerCapR.000
+    400198: TowerRoomFloorB.000
+    400200: TowerRoomFloorT.000
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -263,6 +291,20 @@ ModelImporter:
     2300166: Edge.035
     2300168: Edge.036
     2300170: Bridge.020
+    2300172: LargePillar.000
+    2300174: LargePillar.002
+    2300176: LibraryBack.000
+    2300178: LibraryBeam.000
+    2300180: LibraryFloorB.000
+    2300182: LibraryFloorT.000
+    2300184: LibraryL.000
+    2300186: LibraryM.000
+    2300188: libraryR.00
+    2300190: Tower.000
+    2300192: TowerCapL.000
+    2300194: TowerCapR.000
+    2300196: TowerRoomFloorB.000
+    2300198: TowerRoomFloorT.000
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -349,6 +391,20 @@ ModelImporter:
     3300166: Edge.035
     3300168: Edge.036
     3300170: Bridge.020
+    3300172: LargePillar.000
+    3300174: LargePillar.002
+    3300176: LibraryBack.000
+    3300178: LibraryBeam.000
+    3300180: LibraryFloorB.000
+    3300182: LibraryFloorT.000
+    3300184: LibraryL.000
+    3300186: LibraryM.000
+    3300188: libraryR.00
+    3300190: Tower.000
+    3300192: TowerCapL.000
+    3300194: TowerCapR.000
+    3300196: TowerRoomFloorB.000
+    3300198: TowerRoomFloorT.000
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -433,6 +489,20 @@ ModelImporter:
     4300162: Edge.033
     4300164: Edge.032
     4300166: Edge.028
+    4300168: LibraryL.000
+    4300170: LibraryBeam.000
+    4300172: LargePillar.002
+    4300174: LibraryFloorB.000
+    4300176: libraryR.00
+    4300178: LargePillar.000
+    4300180: LibraryBack.000
+    4300182: LibraryM.000
+    4300184: Tower.000
+    4300186: LibraryFloorT.000
+    4300188: TowerCapL.000
+    4300190: TowerCapR.000
+    4300192: TowerRoomFloorB.000
+    4300194: TowerRoomFloorT.000
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -519,6 +589,20 @@ ModelImporter:
     6400166: Edge.035
     6400168: Edge.036
     6400170: Bridge.020
+    6400172: LargePillar.000
+    6400174: LargePillar.002
+    6400176: LibraryBack.000
+    6400178: LibraryBeam.000
+    6400180: LibraryFloorB.000
+    6400182: LibraryFloorT.000
+    6400184: LibraryL.000
+    6400186: LibraryM.000
+    6400188: libraryR.00
+    6400190: Tower.000
+    6400192: TowerCapL.000
+    6400194: TowerCapR.000
+    6400196: TowerRoomFloorB.000
+    6400198: TowerRoomFloorT.000
     9500000: //RootNode
   materials:
     importMaterials: 1
