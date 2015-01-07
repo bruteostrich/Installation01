@@ -152,6 +152,13 @@ ModelImporter:
     100292: Edge.062
     100294: Edge.063
     100296: Edge.064
+    100298: Edge.065
+    100300: FusionCoil
+    100302: FusionCoil.001
+    100304: FusionCoil.002
+    100306: FusionCoil.003
+    100308: FusionCoil.004
+    100310: FusionCoil.005
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -301,6 +308,13 @@ ModelImporter:
     400292: Edge.062
     400294: Edge.063
     400296: Edge.064
+    400298: Edge.065
+    400300: FusionCoil
+    400302: FusionCoil.001
+    400304: FusionCoil.002
+    400306: FusionCoil.003
+    400308: FusionCoil.004
+    400310: FusionCoil.005
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -447,6 +461,13 @@ ModelImporter:
     2300286: Edge.062
     2300288: Edge.063
     2300290: Edge.064
+    2300292: Edge.065
+    2300294: FusionCoil
+    2300296: FusionCoil.001
+    2300298: FusionCoil.002
+    2300300: FusionCoil.003
+    2300302: FusionCoil.004
+    2300304: FusionCoil.005
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -593,6 +614,13 @@ ModelImporter:
     3300286: Edge.062
     3300288: Edge.063
     3300290: Edge.064
+    3300292: Edge.065
+    3300294: FusionCoil
+    3300296: FusionCoil.001
+    3300298: FusionCoil.002
+    3300300: FusionCoil.003
+    3300302: FusionCoil.004
+    3300304: FusionCoil.005
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -738,6 +766,13 @@ ModelImporter:
     4300284: Edge.061
     4300286: Edge.060
     4300288: Edge.059
+    4300290: FusionCoil.005
+    4300292: FusionCoil.004
+    4300294: FusionCoil.003
+    4300296: FusionCoil.002
+    4300298: FusionCoil.001
+    4300300: FusionCoil
+    4300302: Edge.065
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -884,6 +919,13 @@ ModelImporter:
     6400286: Edge.062
     6400288: Edge.063
     6400290: Edge.064
+    6400292: Edge.065
+    6400294: FusionCoil
+    6400296: FusionCoil.001
+    6400298: FusionCoil.002
+    6400300: FusionCoil.003
+    6400302: FusionCoil.004
+    6400304: FusionCoil.005
     9500000: //RootNode
   materials:
     importMaterials: 1
