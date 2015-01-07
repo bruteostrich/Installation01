@@ -146,6 +146,12 @@ ModelImporter:
     100280: SmallPillar.003
     100282: Spot.000
     100284: Spot.001
+    100286: Edge.059
+    100288: Edge.060
+    100290: Edge.061
+    100292: Edge.062
+    100294: Edge.063
+    100296: Edge.064
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -289,6 +295,12 @@ ModelImporter:
     400280: SmallPillar.003
     400282: Spot.000
     400284: Spot.001
+    400286: Edge.059
+    400288: Edge.060
+    400290: Edge.061
+    400292: Edge.062
+    400294: Edge.063
+    400296: Edge.064
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -429,6 +441,12 @@ ModelImporter:
     2300274: Edge.058
     2300276: SmallPillar.000
     2300278: SmallPillar.003
+    2300280: Edge.059
+    2300282: Edge.060
+    2300284: Edge.061
+    2300286: Edge.062
+    2300288: Edge.063
+    2300290: Edge.064
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -569,6 +587,12 @@ ModelImporter:
     3300274: Edge.058
     3300276: SmallPillar.000
     3300278: SmallPillar.003
+    3300280: Edge.059
+    3300282: Edge.060
+    3300284: Edge.061
+    3300286: Edge.062
+    3300288: Edge.063
+    3300290: Edge.064
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -708,6 +732,12 @@ ModelImporter:
     4300272: Edge.056
     4300274: SmallPillar.000
     4300276: Edge.055
+    4300278: Edge.064
+    4300280: Edge.063
+    4300282: Edge.062
+    4300284: Edge.061
+    4300286: Edge.060
+    4300288: Edge.059
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -848,6 +878,12 @@ ModelImporter:
     6400274: Edge.058
     6400276: SmallPillar.000
     6400278: SmallPillar.003
+    6400280: Edge.059
+    6400282: Edge.060
+    6400284: Edge.061
+    6400286: Edge.062
+    6400288: Edge.063
+    6400290: Edge.064
     9500000: //RootNode
   materials:
     importMaterials: 1
