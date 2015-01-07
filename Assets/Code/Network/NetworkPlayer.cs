@@ -4,12 +4,19 @@ using System.Collections;
 public class NetworkPlayer : Photon.MonoBehaviour 
 {
     // The third person character model seen by other players across the network.
-    public GameObject PlayerModel;
-
+    public GameObject firstPersonObject;
+    public GameObject thirdPersonObject;
+    
     private void Awake ()
     {
         // Keep this gameobject between all scenes (e.g. when a map change occurs we still want the players to exist)
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Update ()
+    {
+        this.thirdPersonObject.transform.position = this.firstPersonObject.transform.position - new Vector3 (0,1,0);
+        this.thirdPersonObject.transform.rotation = this.firstPersonObject.transform.rotation;
     }
 
     private void Start ()
@@ -18,21 +25,25 @@ public class NetworkPlayer : Photon.MonoBehaviour
         if (photonView.isMine == true) 
         {
             // disable the third person model
-            PlayerModel.SetActive(false); 
-
+            firstPersonObject.SetActive(true);
+            this.thirdPersonObject.SetActive(false);
+            this.GetComponent<GameLogic.Player>().enabled = true;
+            
             // make sure all other player componenents are enabled
-            foreach (Behaviour childCompnent in this.gameObject.GetComponentsInChildren<Behaviour>())
-                childCompnent.enabled = true;
+            //foreach (Behaviour childCompnent in this.gameObject.GetComponentsInChildren<Behaviour>())
+                //childCompnent.enabled = true;
         }
         // if this is the remote player
         else
         {
             // enable the third person model
-            PlayerModel.SetActive(true);
+            firstPersonObject.SetActive(false);
+            this.thirdPersonObject.SetActive(true);
+            this.GetComponent<GameLogic.Player>().enabled = false;
 
             // make sure all other player components are disabled
-            foreach (Behaviour childCompnent in this.gameObject.GetComponentsInChildren<Behaviour>())
-                childCompnent.enabled = false;
+            //foreach (Behaviour childCompnent in this.gameObject.GetComponentsInChildren<Behaviour>())
+              //  childCompnent.enabled = false;
         }
     }
 
@@ -42,17 +53,17 @@ public class NetworkPlayer : Photon.MonoBehaviour
         if (stream.isWriting) 
         {
             // local player, send our position info
-            stream.SendNext(transform.position);
+            stream.SendNext(firstPersonObject.transform.position);
             // local player, send our rotation info
-            stream.SendNext(transform.rotation);
+            stream.SendNext(firstPersonObject.transform.rotation);
         }
         // if this is the remote player
         else 
         {
             // remote player, receive position info
-            this.transform.position = (Vector3)stream.ReceiveNext();
+            this.firstPersonObject.transform.position = (Vector3)stream.ReceiveNext();
             // remote player, receive rotation info
-            this.transform.rotation = (Quaternion)stream.ReceiveNext(); 
+            this.firstPersonObject.transform.rotation = (Quaternion)stream.ReceiveNext(); 
         }
     }
 }
