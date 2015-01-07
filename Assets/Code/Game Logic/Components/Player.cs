@@ -15,7 +15,7 @@ namespace GameLogic
 		public PlayerStats playerStats; 
 
 		public CharacterController charCont;
-		public CharacterMotor charMotor; 
+		public CharacterMotor charMotor;
 
 		public Transform WalkAnimationHolder;
 
@@ -79,5 +79,7 @@ namespace GameLogic
 		public int kills;
 		public int deaths;
 		public int score; 
+
+		public bool isAlive;
 	}
 }
