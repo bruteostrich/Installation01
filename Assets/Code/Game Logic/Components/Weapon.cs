@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Weapon : MonoBehaviour 
 {
+	public static Weapon instance; 
 	public WeaponStats weapon;
 	public WeaponType weaponType;
 
@@ -22,6 +23,7 @@ public class Weapon : MonoBehaviour
 
 	void Start () 
 	{
+		instance = this; 
 		fullReload = false;
 		isReloading = false;
 		isMelee = false; 
@@ -150,7 +152,7 @@ public class Weapon : MonoBehaviour
 		}
 	}
 
-	IEnumerator Reload()
+	public IEnumerator Reload()
 	{
 		audio.PlayOneShot(weapon.reload);
 		animation.Rewind ("Reload");
@@ -174,9 +176,16 @@ public class Weapon : MonoBehaviour
 			weapon.bulletsPerMag += weapon.spareBullets;
 			weapon.spareBullets = 0;
 		}
-
 	}
 
+	public IEnumerator DrawGun()
+	{
+		audio.PlayOneShot(weapon.draw);
+		isMelee = true;
+		yield return new WaitForSeconds(1);
+		isMelee = false; 
+	}
+	
 	void OnGUI()
 	{
 		GUI.Box (new Rect (10, 10, 100, 23), weapon.bulletsPerMag.ToString () + " / " + weapon.spareBullets.ToString());
