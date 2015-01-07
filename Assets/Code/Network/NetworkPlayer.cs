@@ -3,6 +3,7 @@ using System.Collections;
 
 public class NetworkPlayer : Photon.MonoBehaviour 
 {
+    public bool offline = false;
     // The third person character model seen by other players across the network.
     public GameObject firstPersonObject;
     public GameObject thirdPersonObject;
@@ -21,6 +22,9 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
     private void Start ()
     {
+        if (offline == true)
+            return;
+
         // if this is the local player
         if (photonView.isMine == true) 
         {
@@ -49,6 +53,9 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
     private void OnPhotonSerializeView (PhotonStream stream, PhotonMessageInfo info)
     {
+        if (offline == true)
+            return;
+
         // if this is the local player
         if (stream.isWriting) 
         {
