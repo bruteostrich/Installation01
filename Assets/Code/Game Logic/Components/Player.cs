@@ -16,7 +16,7 @@ namespace GameLogic
         
         //Vars for controlling the playerSpeed/animationSpeed
         public CharacterController charCont;
-        public CharacterMotor charMotor; 
+		public CharacterMotor charMotor; 
         
         //Layer to hold the animations for the walking/running/idle
         public Transform animationHolder;
@@ -80,7 +80,7 @@ namespace GameLogic
         [RPC]
         public void Server_TakeDamage(float damage)
         {
-            Client_TakeDamage(damage)
+			Client_TakeDamage(damage);
         }
         
         void Client_TakeDamage(float damage)
