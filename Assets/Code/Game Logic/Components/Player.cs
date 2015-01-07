@@ -42,6 +42,9 @@ namespace GameLogic
             if(Input.GetAxis("Horizontal") && charMotor.isGrounded || Input.GetAxis("Vertical") && charMotor.isGrounded)
             {
                 animationHolder.animation.Crossfade("Walk");
+                charMotor.movement.maxForwardSpeed
+                charMotor.movement.maxForwardSpeed
+                charMotor.movement.maxForwardSpeed
             }
             else
             {
