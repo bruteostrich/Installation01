@@ -19,7 +19,7 @@ namespace GameLogic
 
 		public Transform WalkAnimationHolder;
 
-		public float velocityMag; 
+		public float velocityMag;
 
         void Start()
         {
