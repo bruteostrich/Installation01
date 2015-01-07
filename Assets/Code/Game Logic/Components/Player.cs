@@ -17,6 +17,8 @@ namespace GameLogic
         public CharacterController charCont;
         public CharacterMotor charMotor; 
         
+        public Transform animationHolder;
+        
         public float velocityMag;
 
         void Start()
@@ -37,7 +39,14 @@ namespace GameLogic
         
         void AnimSpeedController()
         {
-            
+            if(Input.GetAxis("Horizontal") && charMotor.isGrounded || Input.GetAxis("Vertical") && charMotor.isGrounded)
+            {
+                animationHolder.animation.Crossfade("Walk");
+            }
+            else
+            {
+                animationHolder.animation.Crossfade("Idle");
+            }
         }
 
         private void InitializeInternals()
