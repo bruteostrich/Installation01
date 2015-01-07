@@ -12,6 +12,12 @@ namespace GameLogic
     public class Player : MonoBehaviour
     {
         private GameManager Manager;
+        public PlayerStats playerStats;
+        
+        public CharacterController charCont;
+        public CharacterMotor charMotor; 
+        
+        public float velocityMag;
 
         void Start()
         {
@@ -20,8 +26,16 @@ namespace GameLogic
 
         void Update()
         {
+
         }
+        
         void FixedUpdate()
+        {
+            velocityMag = charCont.velocity.magnitude;
+            AnimSpeedController();
+        }
+        
+        void AnimSpeedController()
         {
             
         }
@@ -35,5 +49,20 @@ namespace GameLogic
         {
             Manager = GameManagerLocator.Manager;
         }
+        
+    }
+    
+    [System.Serializable]
+    public class PlayerStats
+    {
+        public float health;
+        public float shields;
+        public float stamina;
+        
+        public int kills;
+        public int deaths;
+        public int scores;
+        
+        public bool isAlive;
     }
 }
