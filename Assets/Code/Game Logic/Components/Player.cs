@@ -24,6 +24,8 @@ namespace GameLogic
         void Start()
         {
             InitializeInternals();
+            Screen.lockCursor = true;
+            Screen.showCursor = false;
         }
 
         void Update()
