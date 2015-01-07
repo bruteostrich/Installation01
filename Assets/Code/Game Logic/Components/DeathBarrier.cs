@@ -7,7 +7,7 @@ public class DeathBarrier : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            collider.transform.root.position = new Vector3(0, 5, 0);
+            collider.transform.position = new Vector3(0, 5, 0);
         }
     }
 }
