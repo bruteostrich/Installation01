@@ -23,15 +23,17 @@ namespace GameLogic
         public string[] StartupAssets;
         private SpawnPointCollection SpawnPoints;
 
+        private bool _AssetsLoaded;
         /// <summary>
-        /// Gets a value indicating wether assets required to run the game have been loaded
+        /// Gets a value indicating wether the manager has loaded all assets they are required for gameplay to start.
         /// </summary>
         public bool AssetsLoaded
         {
-            get { return _AssetsLoaded; }
-            set { _AssetsLoaded = value; }
+            get
+            {
+                return _AssetsLoaded;
+            }
         }
-        private bool _AssetsLoaded;
 
         /// <summary>
         /// Gets a value indicating wether the GameManager has initialized all of the internal objects required for the game to start
