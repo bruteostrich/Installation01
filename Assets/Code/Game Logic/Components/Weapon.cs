@@ -181,6 +181,14 @@ public class Weapon : MonoBehaviour
 	public IEnumerator DrawGun()
 	{
 		audio.PlayOneShot(weapon.draw);
+		if(weapon.bulletsPerMag == 0 && isReloading == false && weapon.spareBullets != 0)
+		{
+			StartCoroutine(Reload());
+			ammoHolder = weapon.bulletsPerMag;
+			fullReload = true;
+			isReloading = true;
+		}
+
 		isMelee = true;
 		yield return new WaitForSeconds(1);
 		isMelee = false; 

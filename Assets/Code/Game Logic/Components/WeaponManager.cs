@@ -35,13 +35,6 @@ public class WeaponManager : MonoBehaviour
 				{
 					we.gameObject.SetActive (true);
 					StartCoroutine(we.DrawGun());
-					if(we.weapon.bulletsPerMag == 0 && we.isReloading == false && we.weapon.spareBullets != 0)
-					{
-						StartCoroutine(weaponsList[curWeapon].Reload());
-						we.ammoHolder = we.weapon.bulletsPerMag;
-						we.fullReload = true;
-						we.isReloading = true;
-					}
 				}
 			}
 		}
