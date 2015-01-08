@@ -179,7 +179,6 @@ public class NetworkManager : Photon.MonoBehaviour
     private void SpawnPlayer ()
     {
         GameObject player = PhotonNetwork.Instantiate("Player Controller", new Vector3(0, 10, 0), Quaternion.identity, 0);
-
         this.Loadlevel();
     }
 }

@@ -3,14 +3,13 @@ using System.Collections;
 
 public class NetworkPlayer : Photon.MonoBehaviour 
 {
+	public static NetworkPlayer instance; 
     public bool offline = false;
+	public PlayerStats playerStats; 
     // The third person character model seen by other players across the network.
     public GameObject firstPersonObject;
     public GameObject thirdPersonObject;
-
-	public float shields = 100; 
-    public float health = 100;
-    
+	    
     private void Awake ()
     {
         // Keep this gameobject between all scenes (e.g. when a map change occurs we still want the players to exist)
@@ -25,6 +24,7 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
     private void Start ()
     {
+		instance = this; 
         if (offline == true)
             return;
 
@@ -35,8 +35,7 @@ public class NetworkPlayer : Photon.MonoBehaviour
             firstPersonObject.SetActive(true);
             this.thirdPersonObject.SetActive(false);
             this.GetComponent<GameLogic.Player>().enabled = true;
-            
-            // make sure all other player componenents are enabled
+			// make sure all other player componenents are enabled
             //foreach (Behaviour childCompnent in this.gameObject.GetComponentsInChildren<Behaviour>())
                 //childCompnent.enabled = true;
         }
@@ -47,7 +46,6 @@ public class NetworkPlayer : Photon.MonoBehaviour
             firstPersonObject.SetActive(false);
             this.thirdPersonObject.SetActive(true);
             this.GetComponent<GameLogic.Player>().enabled = false;
-
             // make sure all other player components are disabled
             //foreach (Behaviour childCompnent in this.gameObject.GetComponentsInChildren<Behaviour>())
               //  childCompnent.enabled = false;
@@ -57,18 +55,24 @@ public class NetworkPlayer : Photon.MonoBehaviour
     [RPC]
     private void GetHit (float damage)
     {
-        if(this.shields > 0)
-            this.shields -= damage;
+        if(playerStats.shields > 0)
+			playerStats.shields -= damage;
         else
-			this.health -= damage; 
+			playerStats.health -= damage; 
 
-		if (this.health <= 0)
+		if (playerStats.health <= 0)
         {
-            Debug.Log("You Have Died!!");
-            this.health = 100;
-            this.firstPersonObject.transform.position = new Vector3(0, 5, 0);
+			Spawn ();
         }
     }
+
+	void Spawn()
+	{
+		Debug.Log("You Have Died!!");
+		playerStats.shields = 100;
+		playerStats.health = 20;
+		this.firstPersonObject.transform.position = new Vector3(0, 5, 0);
+	}
 
     private void OnPhotonSerializeView (PhotonStream stream, PhotonMessageInfo info)
     {
@@ -92,4 +96,26 @@ public class NetworkPlayer : Photon.MonoBehaviour
             this.firstPersonObject.transform.rotation = (Quaternion)stream.ReceiveNext(); 
         }
     }
+
+	void OnGUI()
+	{
+		GUI.Box (new Rect (Screen.width / 3 - 5, 10, Screen.width / 3 + 10, 30), "");
+		GUI.Box (new Rect (Screen.width / 3, 15, (playerStats.shields / 100) * Screen.width / 3, 20), "");
+
+		GUI.Box (new Rect(Screen.width / 2 - 8, Screen.height / 2 - 8, 16, 16), "");
+	}
+}
+
+[System.Serializable]
+public class PlayerStats
+{
+	public float health;
+	public float shields;
+	public float stamina;
+	
+	public int kills;
+	public int deaths;
+	public int score; 
+	
+	public bool isAlive;
 }

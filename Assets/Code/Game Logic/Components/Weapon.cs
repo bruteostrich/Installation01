@@ -104,7 +104,7 @@ public class Weapon : MonoBehaviour
 		                if (photonview.isMine)
 		                    return;
 	
-	        		photonview.RPC ("GetHit", PhotonTargets.AllBufferedViaServer, 50);
+	        			photonview.RPC ("GetHit", PhotonTargets.AllBufferedViaServer, 50);
 	                }
 		}
 	}
@@ -149,14 +149,14 @@ public class Weapon : MonoBehaviour
 			Instantiate(hitParticles[0],hit.point,Quaternion.FromToRotation(Vector3.up, hit.normal));
 			Instantiate(hitHoles[0], hit.point  + hit.normal * 0.04f, Quaternion.FromToRotation(-hit.normal, -Vector3.forward));
 
-	                if (hit.collider.transform.root.tag == "Player")
-	                {
-		                PhotonView photonview = hit.collider.transform.root.GetComponent<PhotonView>();
-		                if (photonview.isMine)
-		                    return;
+	        if (hit.collider.transform.root.tag == "Player")
+	        {
+		        PhotonView photonview = hit.collider.transform.root.GetComponent<PhotonView>();
+		        if (photonview.isMine)
+		            return;
 		
-		                photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, weapon.damage);
-	                }
+				photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, weapon.damage);
+			}
 		}
 
 		if(weapon.bulletsPerMag > 0)
@@ -218,7 +218,7 @@ public class Weapon : MonoBehaviour
 	
 	void OnGUI()
 	{
-		GUI.Box (new Rect (10, 10, 100, 23), weapon.bulletsPerMag.ToString () + " / " + weapon.spareBullets.ToString());
+		GUI.Box (new Rect (10, Screen.height - 33, 100, 23), weapon.bulletsPerMag.ToString () + " / " + weapon.spareBullets.ToString());
 	}
 }
 
