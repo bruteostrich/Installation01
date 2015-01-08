@@ -61,7 +61,11 @@ public class Weapon : MonoBehaviour
 			Invoke("Fire", 0.16f);
 			Invoke("Fire", 0.24f);
 		}
-
+		
+		if(Input.GetMouseButtonDown(0) && weaponType == WeaponType.shotgun && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee)
+			for(int i = 0; i < 3; i++)
+				Fire();
+		
 		if(Input.GetKeyDown(KeyCode.F) && !isReloading && !isMelee)
 			Melee ();
 
@@ -258,5 +262,6 @@ public class WeaponStats
 public enum WeaponType
 {
 	Auto,
-	Threeround
+	Threeround,
+	shotgun
 }
