@@ -171,6 +171,16 @@ ModelImporter:
     100330: Edge.069
     100332: SmallPillar.004
     100334: SmallPillar.005
+    100336: Glass.002
+    100338: Glass.003
+    100340: Glass.006
+    100342: Glass.008
+    100344: Glass.009
+    100346: Glass.010
+    100348: Glass.013
+    100350: Glass.015
+    100352: Glass.016
+    100354: Glass.019
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -339,6 +349,16 @@ ModelImporter:
     400330: Edge.069
     400332: SmallPillar.004
     400334: SmallPillar.005
+    400336: Glass.002
+    400338: Glass.003
+    400340: Glass.006
+    400342: Glass.008
+    400344: Glass.009
+    400346: Glass.010
+    400348: Glass.013
+    400350: Glass.015
+    400352: Glass.016
+    400354: Glass.019
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -504,6 +524,16 @@ ModelImporter:
     2300324: Edge.069
     2300326: SmallPillar.004
     2300328: SmallPillar.005
+    2300330: Glass.002
+    2300332: Glass.003
+    2300334: Glass.006
+    2300336: Glass.008
+    2300338: Glass.009
+    2300340: Glass.010
+    2300342: Glass.013
+    2300344: Glass.015
+    2300346: Glass.016
+    2300348: Glass.019
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -669,6 +699,16 @@ ModelImporter:
     3300324: Edge.069
     3300326: SmallPillar.004
     3300328: SmallPillar.005
+    3300330: Glass.002
+    3300332: Glass.003
+    3300334: Glass.006
+    3300336: Glass.008
+    3300338: Glass.009
+    3300340: Glass.010
+    3300342: Glass.013
+    3300344: Glass.015
+    3300346: Glass.016
+    3300348: Glass.019
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -832,6 +872,16 @@ ModelImporter:
     4300320: Edge.066
     4300322: SmallPillar.005
     4300324: SmallPillar.004
+    4300326: Glass.008
+    4300328: Glass.015
+    4300330: Glass.013
+    4300332: Glass.002
+    4300334: Glass.009
+    4300336: Glass.016
+    4300338: Glass.006
+    4300340: Glass.010
+    4300342: Glass.003
+    4300344: Glass.019
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -997,6 +1047,16 @@ ModelImporter:
     6400324: Edge.069
     6400326: SmallPillar.004
     6400328: SmallPillar.005
+    6400330: Glass.002
+    6400332: Glass.003
+    6400334: Glass.006
+    6400336: Glass.008
+    6400338: Glass.009
+    6400340: Glass.010
+    6400342: Glass.013
+    6400344: Glass.015
+    6400346: Glass.016
+    6400348: Glass.019
     9500000: //RootNode
   materials:
     importMaterials: 1
