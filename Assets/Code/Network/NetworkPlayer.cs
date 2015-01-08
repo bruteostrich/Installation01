@@ -99,10 +99,13 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
 	void OnGUI()
 	{
-		GUI.Box (new Rect (Screen.width / 3 - 5, 10, Screen.width / 3 + 10, 30), "");
-		GUI.Box (new Rect (Screen.width / 3, 15, (playerStats.shields / 100) * Screen.width / 3, 20), "");
+        if (photonView.isMine)
+        {
+            GUI.Box(new Rect(Screen.width / 3 - 5, 10, Screen.width / 3 + 10, 30), "");
+            GUI.Box(new Rect(Screen.width / 3, 15, (playerStats.shields / 100) * Screen.width / 3, 20), "");
 
-		GUI.Box (new Rect(Screen.width / 2 - 8, Screen.height / 2 - 8, 16, 16), "");
+            GUI.Box(new Rect(Screen.width / 2 - 8, Screen.height / 2 - 8, 16, 16), "");
+        }
 	}
 }
 
