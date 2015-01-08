@@ -54,9 +54,12 @@ public class NetworkPlayer : Photon.MonoBehaviour
     }
 
     [RPC]
-    private void GetHit ()
+    private void GetHit (float damage)
     {
-        this.health -= 10;
+        if(this.shields > 0)
+            this.shields -= damage;
+        else
+            this.health -= damage; 
 
         if (this.health <= 0)
         {
