@@ -8,6 +8,7 @@ public class NetworkPlayer : Photon.MonoBehaviour
     public GameObject firstPersonObject;
     public GameObject thirdPersonObject;
 
+	public float shields = 100; 
     public float health = 100;
     
     private void Awake ()
@@ -59,9 +60,9 @@ public class NetworkPlayer : Photon.MonoBehaviour
         if(this.shields > 0)
             this.shields -= damage;
         else
-            this.health -= damage; 
+			this.health -= damage; 
 
-        if (this.health <= 0)
+		if (this.health <= 0)
         {
             Debug.Log("You Have Died!!");
             this.health = 100;
