@@ -181,6 +181,10 @@ ModelImporter:
     100350: Glass.015
     100352: Glass.016
     100354: Glass.019
+    100356: Bridge.038
+    100358: Edge.070
+    100360: Edge.071
+    100362: Edge.073
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -359,6 +363,10 @@ ModelImporter:
     400350: Glass.015
     400352: Glass.016
     400354: Glass.019
+    400356: Bridge.038
+    400358: Edge.070
+    400360: Edge.071
+    400362: Edge.073
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -534,6 +542,10 @@ ModelImporter:
     2300344: Glass.015
     2300346: Glass.016
     2300348: Glass.019
+    2300350: Bridge.038
+    2300352: Edge.070
+    2300354: Edge.071
+    2300356: Edge.073
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -709,6 +721,10 @@ ModelImporter:
     3300344: Glass.015
     3300346: Glass.016
     3300348: Glass.019
+    3300350: Bridge.038
+    3300352: Edge.070
+    3300354: Edge.071
+    3300356: Edge.073
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -882,6 +898,10 @@ ModelImporter:
     4300340: Glass.010
     4300342: Glass.003
     4300344: Glass.019
+    4300346: Bridge.038
+    4300348: Edge.073
+    4300350: Edge.071
+    4300352: Edge.070
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -1057,6 +1077,10 @@ ModelImporter:
     6400344: Glass.015
     6400346: Glass.016
     6400348: Glass.019
+    6400350: Bridge.038
+    6400352: Edge.070
+    6400354: Edge.071
+    6400356: Edge.073
     9500000: //RootNode
   materials:
     importMaterials: 1
