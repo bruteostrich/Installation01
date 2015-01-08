@@ -61,6 +61,7 @@ public class NetworkPlayer : Photon.MonoBehaviour
         if (this.health <= 0)
         {
             Debug.Log("You Have Died!!");
+            this.health = 100;
             this.firstPersonObject.transform.position = new Vector3(0, 5, 0);
         }
     }
