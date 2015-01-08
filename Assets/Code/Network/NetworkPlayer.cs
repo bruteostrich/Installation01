@@ -7,6 +7,8 @@ public class NetworkPlayer : Photon.MonoBehaviour
     // The third person character model seen by other players across the network.
     public GameObject firstPersonObject;
     public GameObject thirdPersonObject;
+
+    public float health = 100;
     
     private void Awake ()
     {
@@ -48,6 +50,18 @@ public class NetworkPlayer : Photon.MonoBehaviour
             // make sure all other player components are disabled
             //foreach (Behaviour childCompnent in this.gameObject.GetComponentsInChildren<Behaviour>())
               //  childCompnent.enabled = false;
+        }
+    }
+
+    [RPC]
+    private void GetHit ()
+    {
+        this.health -= 10;
+
+        if (this.health <= 0)
+        {
+            Debug.Log("You Have Died!!");
+            this.firstPersonObject.transform.position = new Vector3(0, 5, 0);
         }
     }
 

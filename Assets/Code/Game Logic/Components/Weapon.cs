@@ -93,6 +93,15 @@ public class Weapon : MonoBehaviour
 			Instantiate(hitParticles[0],hit.point,Quaternion.FromToRotation(Vector3.up, hit.normal));
 			Instantiate(hitHoles[0], hit.point  + hit.normal * 0.04f, Quaternion.FromToRotation(-hit.normal, -Vector3.forward));
 			audio.PlayOneShot(weapon.meleeHit);
+
+            if (hit.collider.transform.root.tag == "Player")
+            {
+                PhotonView photonview = hit.collider.transform.root.GetComponent<PhotonView>();
+                if (photonview.isMine)
+                    return;
+
+                photonview.RPC ("GetHit", PhotonTargets.AllBufferedViaServer);
+            }
 		}
 	}
 
@@ -135,6 +144,15 @@ public class Weapon : MonoBehaviour
 		{
 			Instantiate(hitParticles[0],hit.point,Quaternion.FromToRotation(Vector3.up, hit.normal));
 			Instantiate(hitHoles[0], hit.point  + hit.normal * 0.04f, Quaternion.FromToRotation(-hit.normal, -Vector3.forward));
+
+            if (hit.collider.transform.root.tag == "Player")
+            {
+                PhotonView photonview = hit.collider.transform.root.GetComponent<PhotonView>();
+                if (photonview.isMine)
+                    return;
+
+                photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer);
+            }
 		}
 
 		if(weapon.bulletsPerMag > 0)
