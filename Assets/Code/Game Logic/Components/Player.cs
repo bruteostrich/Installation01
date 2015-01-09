@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System;
+//using System;
 using System.IO;
 using System.Threading;
 using System.Collections;
@@ -17,11 +17,6 @@ namespace GameLogic
 		//For controlling the playerSpeed 
 		public CharacterController charCont;
 		public CharacterMotor charMotor;
-		
-		public Camera playerCam; 
-		
-		public int hipFOV;
-		public int aimFOV;
 
 		public int walkSpeed = 7;
 		public int runSpeed = 12;
@@ -32,13 +27,10 @@ namespace GameLogic
 
         void Start()
         {
-	    instance = this; 
+	    	instance = this; 
             InitializeInternals();
             Screen.lockCursor = true;
             Screen.showCursor = false;
-            
-            hipFOV = 70;
-            aimFOV = hipFOV + 10; 
         }
 
         void FixedUpdate()
@@ -47,9 +39,14 @@ namespace GameLogic
 			SpeedController ();
         }
 
+		void Update()
+		{
+
+		}
+
 		void SpeedController()
 		{
-			if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 && charCont.isGrounded)
+			if(Input.GetAxis("Horizontal") != 0 && charCont.isGrounded || Input.GetAxis("Vertical") != 0 && charCont.isGrounded)
 			{
 				charMotor.movement.maxForwardSpeed = walkSpeed;
 				charMotor.movement.maxSidewaysSpeed = walkSpeed;
@@ -71,7 +68,7 @@ namespace GameLogic
 
         private void AcquireGameManager()
         {
-            Manager = GameManagerLocator.Manager;
+           // Manager = GameManagerLocator.Manager;
         }
     }
 }
