@@ -61,14 +61,14 @@ public class Weapon : MonoBehaviour
 			if(weaponType == WeaponType.Auto)
 				Fire();
 				
-			if(weaponType == weaponType.Threeround)
+			if(weaponType == WeaponType.Threeround)
 			{
 				Invoke("Fire", 0.08f);
 				Invoke("Fire", 0.16f);
 				Invoke("Fire", 0.24f);	
 			}
 			
-			if(weaponType == weaponType.shotgun)
+			if(weaponType == WeaponType.shotgun)
 				for(int i = 0; i < 5; i++)
 					Fire(); 
 		}
@@ -230,11 +230,11 @@ public class Weapon : MonoBehaviour
 		{
 			if(Input.GetKeyDown(KeyCode.Z) && !isZooming || Input.GetMouseButtonDown(3) && !isZooming)
 			{
-				Player.instance.playerCam.fiewOfView = mathf.Lerp(weapon.hipFOV, wepaon.aimFOV, 0.25f);
+				GameLogic.Player.instance.playerCam.fieldOfView = Mathf.Lerp(weapon.hipFOV, weapon.aimFOV, 0.25f);
 			}
 			else if(Input.GetKeyDown(KeyCode.Z) && isZooming || Input.GetMouseButtonDown(3) && isZooming)
 			{
-				Player.instance.playerCam.fiewOfView = mathf.Lerp(weapon.aimFOV, wepaon.hipFOV, 0.25f);
+                GameLogic.Player.instance.playerCam.fieldOfView = Mathf.Lerp(weapon.aimFOV, weapon.hipFOV, 0.25f);
 			}
 		}
 	}
