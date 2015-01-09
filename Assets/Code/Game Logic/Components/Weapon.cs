@@ -51,21 +51,26 @@ public class Weapon : MonoBehaviour
 			else
 				weapon.ammoCounter.text = "00";
 		}
-
-		if(Input.GetMouseButton(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee && weaponType == WeaponType.Auto)
-			Fire(); 
-
-		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee && weaponType == WeaponType.Threeround)
+		
+		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee)
 		{
-			Invoke("Fire", 0.08f);
-			Invoke("Fire", 0.16f);
-			Invoke("Fire", 0.24f);
-		}
-		
-		if(Input.GetMouseButtonDown(0) && weaponType == WeaponType.shotgun && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee)
-			for(int i = 0; i < 3; i++)
+			audio.PlayOneShot (weapon.fire);
+			
+			if(weaponType == WeaponType.Auto)
 				Fire();
-		
+				
+			if(weaponType == weaponType.Threeround)
+			{
+				Invoke("Fire", 0.08f);
+				Invoke("Fire", 0.16f);
+				Invoke("Fire", 0.24f);	
+			}
+			
+			if(weaponType == weaponType.shotgun)
+				for(int i = 0; i < 5; i++)
+					Fire(); 
+		}
+
 		if(Input.GetKeyDown(KeyCode.F) && !isReloading && !isMelee)
 			Melee ();
 
@@ -137,7 +142,6 @@ public class Weapon : MonoBehaviour
 
 		weapon.fireRateCooler = weapon.fireRate;
 		weapon.bulletsPerMag--;
-		audio.PlayOneShot (weapon.fire);
 
 		weapon.cameraKickback += new Vector3(weapon.cameraRotation.x, Random.Range(-weapon.cameraRotation.y, weapon.cameraRotation.y));
 		Instantiate(weapon.muzzleflash, weapon.muzzleFlashSpawn.position, weapon.muzzleFlashSpawn.rotation); 
