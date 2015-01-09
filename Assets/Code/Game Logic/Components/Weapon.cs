@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
 	public bool fullReload; 
 	public bool isReloading;
 	public bool isMelee;
+	public bool isZooming;
 
 	public GameObject[] hitParticles;
 	public GameObject[] hitHoles; 
@@ -27,6 +28,7 @@ public class Weapon : MonoBehaviour
 		fullReload = false;
 		isReloading = false;
 		isMelee = false; 
+		isZooming = false; 
 
 		weapon.fireRateCooler = 0; 
 
@@ -82,7 +84,7 @@ public class Weapon : MonoBehaviour
 			isReloading = true;
 		}
 		
-		Zoom(); 
+		Zoom();
 	}
 
 	void Melee()
@@ -226,9 +228,13 @@ public class Weapon : MonoBehaviour
 	{
 		if(weapon.canZoomIn)
 		{
-			if(Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(3))
+			if(Input.GetKeyDown(KeyCode.Z) && !isZooming || Input.GetMouseButtonDown(3) && !isZooming)
 			{
-				
+				Player.instance.playerCam.fiewOfView = mathf.Lerp(weapon.hipFOV, wepaon.aimFOV, 0.25f);
+			}
+			else if(Input.GetKeyDown(KeyCode.Z) && isZooming || Input.GetMouseButtonDown(3) && isZooming)
+			{
+				Player.instance.playerCam.fiewOfView = mathf.Lerp(weapon.aimFOV, wepaon.hipFOV, 0.25f);
 			}
 		}
 	}
@@ -268,6 +274,9 @@ public class WeaponStats
 	
 	public bool canZoomIn; 
 	public bool hasAmmoCounter;
+	
+	public int hipFOV;
+	public int aimFOV;
 
 	public TextMesh ammoCounter; 
 
