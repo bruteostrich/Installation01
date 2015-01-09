@@ -81,6 +81,8 @@ public class Weapon : MonoBehaviour
 			fullReload = false;
 			isReloading = true;
 		}
+		
+		Zoom(); 
 	}
 
 	void Melee()
@@ -220,6 +222,17 @@ public class Weapon : MonoBehaviour
 		isMelee = false; 
 	}
 	
+	void Zoom()
+	{
+		if(weapon.canZoomIn)
+		{
+			if(Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(3))
+			{
+				
+			}
+		}
+	}
+	
 	void OnGUI()
 	{
 		GUI.Box (new Rect (10, Screen.height - 33, 100, 23), weapon.bulletsPerMag.ToString () + " / " + weapon.spareBullets.ToString());
@@ -252,6 +265,8 @@ public class WeaponStats
 	public Transform muzzleFlashSpawn; 
 
 	public GameObject muzzleflash; 
+	
+	public bool canZoomIn; 
 	public bool hasAmmoCounter;
 
 	public TextMesh ammoCounter; 
