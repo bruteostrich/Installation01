@@ -58,7 +58,10 @@ public class NetworkPlayer : Photon.MonoBehaviour
         if(playerStats.shields > 0)
 			playerStats.shields -= damage;
         else
-			playerStats.health -= damage; 
+			playerStats.health -= damage;
+
+		if(playerStats.shields < 0)
+			playerStats.shields = 0;
 
 		if (playerStats.health <= 0)
         {
@@ -71,7 +74,9 @@ public class NetworkPlayer : Photon.MonoBehaviour
 		Debug.Log("You Have Died!!");
 		playerStats.shields = 100;
 		playerStats.health = 20;
-		this.firstPersonObject.transform.position = new Vector3(0, 5, 0);
+
+		int spawnPoints = Random.Range(0,SpawnPointManager.instance.spawnPoints.Length -1);
+		this.firstPersonObject.transform.position = SpawnPointManager.instance.spawnPoints[spawnPoints].transform.position;
 	}
 
     private void OnPhotonSerializeView (PhotonStream stream, PhotonMessageInfo info)
