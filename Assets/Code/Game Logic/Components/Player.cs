@@ -17,6 +17,11 @@ namespace GameLogic
 		//For controlling the playerSpeed 
 		public CharacterController charCont;
 		public CharacterMotor charMotor;
+		
+		public Camera playerCam; 
+		
+		public int hipFOV;
+		public int aimFOV;
 
 		public int walkSpeed = 7;
 		public int runSpeed = 12;
@@ -27,10 +32,13 @@ namespace GameLogic
 
         void Start()
         {
-			instance = this; 
+	    instance = this; 
             InitializeInternals();
             Screen.lockCursor = true;
             Screen.showCursor = false;
+            
+            hipFOV = 70;
+            aimFOV = hipFOV + 10; 
         }
 
         void FixedUpdate()
