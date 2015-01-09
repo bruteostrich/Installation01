@@ -73,5 +73,15 @@ namespace GameLogic
         {
             Manager = GameManagerLocator.Manager;
         }
+        
+        public void Zoom()
+        {
+        	playerCam.fiewOfView = mathf.Lerp(hipFOV, aimFOV, 0.25f);
+        }
+        
+        public void DeZoom()
+        {
+        	playerCam.fiewOfView = mathf.Lerp(aimFOV, hipFOV, 0.25f);
+        }
     }
 }
