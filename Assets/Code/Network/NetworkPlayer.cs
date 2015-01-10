@@ -22,6 +22,12 @@ public class NetworkPlayer : Photon.MonoBehaviour
     {
         this.thirdPersonObject.transform.position = this.firstPersonObject.transform.position - new Vector3 (0,1,0);
         this.thirdPersonObject.transform.rotation = this.firstPersonObject.transform.rotation;
+
+		if(Input.GetKeyDown(KeyCode.Y))
+		{
+			PhotonView photonview = transform.root.GetComponent<PhotonView>();
+			photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, 52.5f);
+		}
     }
 
     private void Start ()
@@ -70,25 +76,42 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
 		if (playerStats.health <= 0)
         {
-			Spawn ();
+			StartCoroutine(Die ());
+			playerStats.isAlive = false; 
         }
     }
+
+	IEnumerator Die()
+	{
+		this.firstPersonObject.SetActive (false);
+		yield return new WaitForSeconds (3);
+		Spawn (); 
+	}
 
 	void Spawn()
 	{
 		Debug.Log("You Have Died!!");
 		playerStats.shields = 100;
 		playerStats.health = 20;
+		playerStats.isAlive = true ; 
 
-		int spawnPoints = Random.Range(0,SpawnPointManager.instance.spawnPoints.Length -1);
-		this.firstPersonObject.transform.position = SpawnPointManager.instance.spawnPoints[spawnPoints].transform.position;
+		foreach (Weapon we in WeaponManager.instance.curWepList)
+		{
+			we.gameObject.SetActive(false);
+		}
 
 		WeaponManager.instance.curWeapon = 0;
+		
+		WeaponManager.instance.curWepList[0] = WeaponManager.instance.weaponsList[spawnWeaponNum[0]];
+		WeaponManager.instance.curWepList[1] = WeaponManager.instance.weaponsList[spawnWeaponNum[1]];
+		
 		WeaponManager.instance.curWepList [0].weapon.bulletsPerMag = WeaponManager.instance.curWepList [0].weapon.bulletsPerMagStart;
 		WeaponManager.instance.curWepList [1].weapon.bulletsPerMag = WeaponManager.instance.curWepList [1].weapon.bulletsPerMagStart;
 
-		WeaponManager.instance.curWepList[0] = WeaponManager.instance.weaponsList[spawnWeaponNum[0]];
-		WeaponManager.instance.curWepList[1] = WeaponManager.instance.weaponsList[spawnWeaponNum[1]];
+		int spawnPoints = Random.Range(0,SpawnPointManager.instance.spawnPoints.Length -1);
+		this.firstPersonObject.transform.position = SpawnPointManager.instance.spawnPoints[spawnPoints].transform.position;
+		this.firstPersonObject.SetActive (true);
+		WeaponManager.instance.curWepList [0].gameObject.SetActive (true);
 	}
 
     private void OnPhotonSerializeView (PhotonStream stream, PhotonMessageInfo info)
@@ -118,10 +141,17 @@ public class NetworkPlayer : Photon.MonoBehaviour
 	{
         if (photonView.isMine)
         {
-            GUI.Box(new Rect(Screen.width / 3 - 5, 10, Screen.width / 3 + 10, 30), "");
-            GUI.Box(new Rect(Screen.width / 3, 15, (playerStats.shields / 100) * Screen.width / 3, 20), "");
+			if(playerStats.isAlive && !Application.isLoadingLevel)
+			{
+	            GUI.Box(new Rect(Screen.width / 3 - 5, 10, Screen.width / 3 + 10, 30), "");
+	            GUI.Box(new Rect(Screen.width / 3, 15, (playerStats.shields / 100) * Screen.width / 3, 20), "");
 
-            GUI.Box(new Rect(Screen.width / 2 - 8, Screen.height / 2 - 8, 16, 16), "");
+	            GUI.Box(new Rect(Screen.width / 2 - 8, Screen.height / 2 - 8, 16, 16), "");
+			}
+
+			if(!playerStats.isAlive && !Application.isLoadingLevel)
+				GUI.Box (new Rect(Screen.width/2 - 100, 10, 200, 50), "Repawning");
+
         }
 	}
 }
