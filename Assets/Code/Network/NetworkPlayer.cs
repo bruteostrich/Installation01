@@ -76,17 +76,9 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
 		if (playerStats.health <= 0)
         {
-			StartCoroutine(Die ());
-			playerStats.isAlive = false; 
+			Spawn ();
         }
     }
-
-	IEnumerator Die()
-	{
-		this.firstPersonObject.SetActive (false);
-		yield return new WaitForSeconds (3);
-		Spawn (); 
-	}
 
 	void Spawn()
 	{
@@ -112,8 +104,12 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
 		int spawnPoints = Random.Range(0,SpawnPointManager.instance.spawnPoints.Length -1);
 		this.firstPersonObject.transform.position = SpawnPointManager.instance.spawnPoints[spawnPoints].transform.position;
-		this.firstPersonObject.SetActive (true);
 		WeaponManager.instance.curWepList [0].gameObject.SetActive (true);
+
+		if(photonView.isMine)
+		{
+			this.firstPersonObject.SetActive (true);
+		}
 	}
 
     private void OnPhotonSerializeView (PhotonStream stream, PhotonMessageInfo info)

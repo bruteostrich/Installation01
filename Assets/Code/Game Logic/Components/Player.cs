@@ -18,8 +18,8 @@ namespace GameLogic
 		public CharacterController charCont;
 		public CharacterMotor charMotor;
 
-		public int walkSpeed = 7;
-		public int runSpeed = 9;
+		public float walkSpeed = 5.2f;
+		public float runSpeed = 6.7f;
 
 		//For holding the animations as well as getting the speed to play them at. 
 		public Transform WalkAnimationHolder;
