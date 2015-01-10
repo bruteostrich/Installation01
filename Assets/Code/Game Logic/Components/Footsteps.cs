@@ -27,7 +27,6 @@ public class Footsteps : MonoBehaviour
 	{
 		if(audioTimer == 0)
 		{
-			Debug.Log ("WALKING R GUD");
 			if(Input.GetAxis("Horizontal") != 0 && charCont.isGrounded || Input.GetAxis("Vertical") != 0 && charCont.isGrounded)
 			{
 				int i = Random.Range(0, walkSounds.Length - 1);

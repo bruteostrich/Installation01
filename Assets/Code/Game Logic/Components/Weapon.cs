@@ -52,13 +52,13 @@ public class Weapon : MonoBehaviour
 				weapon.ammoCounter.text = "00";
 		}
 		
-		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee && weaponType == WeaponType.shotgun)
+		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee && weaponType == WeaponType.Shotgun)
 		{
 			audio.PlayOneShot (weapon.fire);
 			Instantiate(weapon.muzzleflash, weapon.muzzleFlashSpawn.position, weapon.muzzleFlashSpawn.rotation);
 			weapon.bulletsPerMag--;
 
-			if(weaponType == WeaponType.shotgun)
+			if(weaponType == WeaponType.Shotgun)
 				for(int i = 0; i < 8; i++)
 					Fire(); 
 		}
@@ -72,6 +72,10 @@ public class Weapon : MonoBehaviour
 			Invoke("Fire", 0.16f);
 			Invoke("Fire", 0.24f);	
 		}
+
+		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee &&weaponType == WeaponType.Single)
+			Fire ();
+		
 
 		if(Input.GetKeyDown(KeyCode.F) && !isReloading && !isMelee)
 			Melee ();
@@ -138,7 +142,7 @@ public class Weapon : MonoBehaviour
 
 	void Fire()
 	{
-		if(weaponType != WeaponType.shotgun)
+		if(weaponType != WeaponType.Shotgun)
 			audio.PlayOneShot (weapon.fire);
 
 		Vector3 direction  = weapon.bulletSpawn.forward;
@@ -148,12 +152,12 @@ public class Weapon : MonoBehaviour
 
 		weapon.fireRateCooler = weapon.fireRate;
 
-		if(weaponType != WeaponType.shotgun)
+		if(weaponType != WeaponType.Shotgun)
 			weapon.bulletsPerMag--;
 
 		weapon.cameraKickback += new Vector3(weapon.cameraRotation.x, Random.Range(-weapon.cameraRotation.y, weapon.cameraRotation.y));
 
-		if(weaponType != WeaponType.shotgun)
+		if(weaponType != WeaponType.Shotgun)
 			Instantiate(weapon.muzzleflash, weapon.muzzleFlashSpawn.position, weapon.muzzleFlashSpawn.rotation); 
 
 		RaycastHit hit;
@@ -281,5 +285,6 @@ public enum WeaponType
 {
 	Auto,
 	Threeround,
-	shotgun
+	Shotgun,
+	Single
 }
