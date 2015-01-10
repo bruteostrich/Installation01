@@ -8,6 +8,8 @@ public class Weapon : MonoBehaviour
 	public WeaponStats weapon;
 	public WeaponType weaponType;
 
+	public int weaponNumber; 
+
 	public bool fullReload; 
 	public bool isReloading;
 	public bool isMelee;

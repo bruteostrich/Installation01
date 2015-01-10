@@ -14,15 +14,14 @@ public class WeaponPickup : MonoBehaviour
 
 	void Update () 
 	{
-		Collider[] weapons = Physics.OverlapSphere(player.position, 2.0f);
-		foreach (Collider Go in weapons)
+		if(Input.GetKeyDown (KeyCode.E))
 		{
-			if(Go.gameObject.tag == "Weapon")
+			Collider[] weapons = Physics.OverlapSphere(player.position, 2.0f);
+			foreach (Collider Go in weapons)
 			{
-				GroundWeapon weapon = Go.gameObject.transform.GetComponent<GroundWeapon>();
-		
-				if(Input.GetKeyDown (KeyCode.E))
+				if(Go.gameObject.tag == "Weapon")
 				{
+					GroundWeapon weapon = Go.gameObject.transform.GetComponent<GroundWeapon>();
 					if(WeaponManager.instance.curWepList[0] != WeaponManager.instance.weaponsList[weapon.weaponNumber] && WeaponManager.instance.curWepList[1] != WeaponManager.instance.weaponsList[weapon.weaponNumber])
 					{
 						WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].gameObject.SetActive(false);
@@ -32,7 +31,6 @@ public class WeaponPickup : MonoBehaviour
 					}
 				}
 			}
-
 		}
 	}
 }

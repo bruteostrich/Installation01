@@ -9,6 +9,8 @@ public class NetworkPlayer : Photon.MonoBehaviour
     // The third person character model seen by other players across the network.
     public GameObject firstPersonObject;
     public GameObject thirdPersonObject;
+
+	public int[] spawnWeaponNum; 
 	    
     private void Awake ()
     {
@@ -24,8 +26,8 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
     private void Start ()
     {
-		PhotonNetwork.sendRate = 35;
-		PhotonNetwork.sendRateOnSerialize = 35;
+		PhotonNetwork.sendRate = 25;
+		PhotonNetwork.sendRateOnSerialize = 25;
 
 		instance = this; 
         if (offline == true)
@@ -80,6 +82,13 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
 		int spawnPoints = Random.Range(0,SpawnPointManager.instance.spawnPoints.Length -1);
 		this.firstPersonObject.transform.position = SpawnPointManager.instance.spawnPoints[spawnPoints].transform.position;
+
+		WeaponManager.instance.curWeapon = 0;
+		WeaponManager.instance.curWepList [0].weapon.bulletsPerMag = WeaponManager.instance.curWepList [0].weapon.bulletsPerMagStart;
+		WeaponManager.instance.curWepList [1].weapon.bulletsPerMag = WeaponManager.instance.curWepList [1].weapon.bulletsPerMagStart;
+
+		WeaponManager.instance.curWepList[0] = WeaponManager.instance.weaponsList[spawnWeaponNum[0]];
+		WeaponManager.instance.curWepList[1] = WeaponManager.instance.weaponsList[spawnWeaponNum[1]];
 	}
 
     private void OnPhotonSerializeView (PhotonStream stream, PhotonMessageInfo info)

@@ -19,7 +19,7 @@ namespace GameLogic
 		public CharacterMotor charMotor;
 
 		public int walkSpeed = 7;
-		public int runSpeed = 12;
+		public int runSpeed = 9;
 
 		//For holding the animations as well as getting the speed to play them at. 
 		public Transform WalkAnimationHolder;
@@ -48,12 +48,26 @@ namespace GameLogic
 		{
 			if(Input.GetAxis("Horizontal") != 0 && charCont.isGrounded || Input.GetAxis("Vertical") != 0 && charCont.isGrounded)
 			{
-				charMotor.movement.maxForwardSpeed = walkSpeed;
-				charMotor.movement.maxSidewaysSpeed = walkSpeed;
-				charMotor.movement.maxBackwardsSpeed = walkSpeed - 1;
+				if(Input.GetKey (KeyCode.LeftShift) && charCont.isGrounded)
+				{
+					charMotor.movement.maxForwardSpeed = runSpeed;
+					charMotor.movement.maxSidewaysSpeed = runSpeed;
+					charMotor.movement.maxBackwardsSpeed = runSpeed - 1;
+					charMotor.movement.maxGroundAcceleration = 25;
+					
+					WalkAnimationHolder.animation["Run"].speed = velocityMag / runSpeed ;
+					WalkAnimationHolder.animation.CrossFade("Run",0.2f);
+				}
+				else
+				{
+					charMotor.movement.maxForwardSpeed = walkSpeed;
+					charMotor.movement.maxSidewaysSpeed = walkSpeed;
+					charMotor.movement.maxBackwardsSpeed = walkSpeed - 1;
+					charMotor.movement.maxGroundAcceleration = 50;
 
-				WalkAnimationHolder.animation["Walk"].speed = velocityMag / walkSpeed ;
-				WalkAnimationHolder.animation.CrossFade("Walk",0.2f);
+					WalkAnimationHolder.animation["Walk"].speed = velocityMag / walkSpeed ;
+					WalkAnimationHolder.animation.CrossFade("Walk",0.2f);
+				}
 			}
 			else
 			{
