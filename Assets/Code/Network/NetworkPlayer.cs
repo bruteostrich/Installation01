@@ -24,6 +24,9 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
     private void Start ()
     {
+		PhotonNetwork.sendRate = 35;
+		PhotonNetwork.sendRateOnSerialize = 35;
+
 		instance = this; 
         if (offline == true)
             return;
