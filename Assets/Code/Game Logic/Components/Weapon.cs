@@ -238,7 +238,7 @@ public class Weapon : MonoBehaviour
 	
 	void OnGUI()
 	{
-		GUI.Box (new Rect (10, Screen.height - 33, 100, 23), weapon.bulletsPerMag.ToString () + " / " + weapon.spareBullets.ToString());
+		GUI.Box (new Rect (Screen.width - 110, Screen.height - 33, 100, 23), weapon.bulletsPerMag.ToString () + " / " + weapon.spareBullets.ToString());
 	}
 }
 

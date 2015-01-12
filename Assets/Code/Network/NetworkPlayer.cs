@@ -10,6 +10,10 @@ public class NetworkPlayer : Photon.MonoBehaviour
     public GameObject firstPersonObject;
     public GameObject thirdPersonObject;
 
+	public Texture2D crosshair;
+	public Texture2D HUDOverlay;
+	public Texture2D motionTracker; 
+
 	public int[] spawnWeaponNum; 
 	    
     private void Awake ()
@@ -144,7 +148,12 @@ public class NetworkPlayer : Photon.MonoBehaviour
 	            GUI.Box(new Rect(Screen.width / 3 - 5, 10, Screen.width / 3 + 10, 30), "");
 	            GUI.Box(new Rect(Screen.width / 3, 15, (playerStats.shields / 100) * Screen.width / 3, 20), "");
 
-	            GUI.Box(new Rect(Screen.width / 2 - 8, Screen.height / 2 - 8, 16, 16), "");
+	            GUI.DrawTexture(new Rect(Screen.width / 2 - 20, Screen.height / 2 - 20, 40, 40), crosshair);
+
+				GUI.color = new Color(1,1,1,0.2f);
+				GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height), HUDOverlay);
+				GUI.color = Color.white;
+				GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height), motionTracker);
 			}
 
 			if(!playerStats.isAlive && !Application.isLoadingLevel)

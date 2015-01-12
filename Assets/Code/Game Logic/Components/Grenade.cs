@@ -50,7 +50,12 @@ namespace GameLogic
 							return;
 
 						photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, 100.0f);
+						DestroyObject(gameObject);
+
 					}
+					else
+						DestroyObject(gameObject);
+
 				}
 				DestroyObject(gameObject);
 			}
