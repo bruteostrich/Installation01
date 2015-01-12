@@ -587,6 +587,17 @@ ModelImporter:
     101162: Object097
     101164: Object120
     101166: Object121
+    101168: Box018
+    101170: Clusters:004.001
+    101172: Group019
+    101174: Group020
+    101176: Group021
+    101178: Group022
+    101180: MediumPillar.036
+    101182: Object146
+    101184: Object147
+    101186: Object148
+    101188: Object149
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -1171,6 +1182,17 @@ ModelImporter:
     401162: Object097
     401164: Object120
     401166: Object121
+    401168: Box018
+    401170: Clusters:004.001
+    401172: Group019
+    401174: Group020
+    401176: Group021
+    401178: Group022
+    401180: MediumPillar.036
+    401182: Object146
+    401184: Object147
+    401186: Object148
+    401188: Object149
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -1746,6 +1768,13 @@ ModelImporter:
     2301144: Object097
     2301146: Object120
     2301148: Object121
+    2301150: Box018
+    2301152: Clusters:004.001
+    2301154: MediumPillar.036
+    2301156: Object146
+    2301158: Object147
+    2301160: Object148
+    2301162: Object149
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -2321,6 +2350,13 @@ ModelImporter:
     3301144: Object097
     3301146: Object120
     3301148: Object121
+    3301150: Box018
+    3301152: Clusters:004.001
+    3301154: MediumPillar.036
+    3301156: Object146
+    3301158: Object147
+    3301160: Object148
+    3301162: Object149
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -2894,6 +2930,13 @@ ModelImporter:
     4301140: Object120
     4301142: Object121
     4301144: Bridge.176
+    4301146: Object146
+    4301148: Object147
+    4301150: Object148
+    4301152: Object149
+    4301154: Box018
+    4301156: MediumPillar.036
+    4301158: Clusters:004.001
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -3469,6 +3512,13 @@ ModelImporter:
     6401144: Object097
     6401146: Object120
     6401148: Object121
+    6401150: Box018
+    6401152: Clusters:004.001
+    6401154: MediumPillar.036
+    6401156: Object146
+    6401158: Object147
+    6401160: Object148
+    6401162: Object149
     9500000: //RootNode
   materials:
     importMaterials: 1
