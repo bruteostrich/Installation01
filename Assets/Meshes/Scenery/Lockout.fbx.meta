@@ -547,6 +547,46 @@ ModelImporter:
     101082: TowerCapR.002
     101084: TowerRoomFloorB.002
     101086: TowerRoomFloorT.002
+    101088: Barrier.000
+    101090: Barrier.001
+    101092: Barrier.003
+    101094: Barrier.004
+    101096: Barrier.006
+    101098: Barrier.007
+    101100: Barrier.009
+    101102: Barrier.010
+    101104: Barrier.011
+    101106: Barrier.012
+    101108: Barrier.013
+    101110: Barrier.016
+    101112: Barrier.017
+    101114: Barrier.018
+    101116: Barrier.020
+    101118: Barrier.021
+    101120: Bridge.176
+    101122: Group001
+    101124: Group008
+    101126: Group009
+    101128: Group010
+    101130: Group011
+    101132: Group012
+    101134: Object028
+    101136: Object029
+    101138: Object051
+    101140: Object052
+    101142: Object053
+    101144: Object054
+    101146: Object055
+    101148: Object056
+    101150: Object057
+    101152: Object058
+    101154: Object059
+    101156: Object060
+    101158: Object077
+    101160: Object096
+    101162: Object097
+    101164: Object120
+    101166: Object121
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -1091,6 +1131,46 @@ ModelImporter:
     401082: TowerCapR.002
     401084: TowerRoomFloorB.002
     401086: TowerRoomFloorT.002
+    401088: Barrier.000
+    401090: Barrier.001
+    401092: Barrier.003
+    401094: Barrier.004
+    401096: Barrier.006
+    401098: Barrier.007
+    401100: Barrier.009
+    401102: Barrier.010
+    401104: Barrier.011
+    401106: Barrier.012
+    401108: Barrier.013
+    401110: Barrier.016
+    401112: Barrier.017
+    401114: Barrier.018
+    401116: Barrier.020
+    401118: Barrier.021
+    401120: Bridge.176
+    401122: Group001
+    401124: Group008
+    401126: Group009
+    401128: Group010
+    401130: Group011
+    401132: Group012
+    401134: Object028
+    401136: Object029
+    401138: Object051
+    401140: Object052
+    401142: Object053
+    401144: Object054
+    401146: Object055
+    401148: Object056
+    401150: Object057
+    401152: Object058
+    401154: Object059
+    401156: Object060
+    401158: Object077
+    401160: Object096
+    401162: Object097
+    401164: Object120
+    401166: Object121
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -1632,6 +1712,40 @@ ModelImporter:
     2301076: TowerCapR.002
     2301078: TowerRoomFloorB.002
     2301080: TowerRoomFloorT.002
+    2301082: Barrier.000
+    2301084: Barrier.001
+    2301086: Barrier.003
+    2301088: Barrier.004
+    2301090: Barrier.006
+    2301092: Barrier.007
+    2301094: Barrier.009
+    2301096: Barrier.010
+    2301098: Barrier.011
+    2301100: Barrier.012
+    2301102: Barrier.013
+    2301104: Barrier.016
+    2301106: Barrier.017
+    2301108: Barrier.018
+    2301110: Barrier.020
+    2301112: Barrier.021
+    2301114: Bridge.176
+    2301116: Object028
+    2301118: Object029
+    2301120: Object051
+    2301122: Object052
+    2301124: Object053
+    2301126: Object054
+    2301128: Object055
+    2301130: Object056
+    2301132: Object057
+    2301134: Object058
+    2301136: Object059
+    2301138: Object060
+    2301140: Object077
+    2301142: Object096
+    2301144: Object097
+    2301146: Object120
+    2301148: Object121
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -2173,6 +2287,40 @@ ModelImporter:
     3301076: TowerCapR.002
     3301078: TowerRoomFloorB.002
     3301080: TowerRoomFloorT.002
+    3301082: Barrier.000
+    3301084: Barrier.001
+    3301086: Barrier.003
+    3301088: Barrier.004
+    3301090: Barrier.006
+    3301092: Barrier.007
+    3301094: Barrier.009
+    3301096: Barrier.010
+    3301098: Barrier.011
+    3301100: Barrier.012
+    3301102: Barrier.013
+    3301104: Barrier.016
+    3301106: Barrier.017
+    3301108: Barrier.018
+    3301110: Barrier.020
+    3301112: Barrier.021
+    3301114: Bridge.176
+    3301116: Object028
+    3301118: Object029
+    3301120: Object051
+    3301122: Object052
+    3301124: Object053
+    3301126: Object054
+    3301128: Object055
+    3301130: Object056
+    3301132: Object057
+    3301134: Object058
+    3301136: Object059
+    3301138: Object060
+    3301140: Object077
+    3301142: Object096
+    3301144: Object097
+    3301146: Object120
+    3301148: Object121
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -2712,6 +2860,40 @@ ModelImporter:
     4301072: Edge.262
     4301074: Edge.263
     4301076: Toplibrary001
+    4301078: Barrier.021
+    4301080: Barrier.020
+    4301082: Barrier.018
+    4301084: Barrier.017
+    4301086: Barrier.016
+    4301088: Barrier.013
+    4301090: Barrier.012
+    4301092: Barrier.011
+    4301094: Barrier.010
+    4301096: Barrier.009
+    4301098: Barrier.007
+    4301100: Barrier.006
+    4301102: Barrier.004
+    4301104: Barrier.003
+    4301106: Barrier.001
+    4301108: Barrier.000
+    4301110: Object028
+    4301112: Object029
+    4301114: Object051
+    4301116: Object052
+    4301118: Object053
+    4301120: Object054
+    4301122: Object055
+    4301124: Object056
+    4301126: Object057
+    4301128: Object058
+    4301130: Object059
+    4301132: Object060
+    4301134: Object077
+    4301136: Object096
+    4301138: Object097
+    4301140: Object120
+    4301142: Object121
+    4301144: Bridge.176
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -3253,6 +3435,40 @@ ModelImporter:
     6401076: TowerCapR.002
     6401078: TowerRoomFloorB.002
     6401080: TowerRoomFloorT.002
+    6401082: Barrier.000
+    6401084: Barrier.001
+    6401086: Barrier.003
+    6401088: Barrier.004
+    6401090: Barrier.006
+    6401092: Barrier.007
+    6401094: Barrier.009
+    6401096: Barrier.010
+    6401098: Barrier.011
+    6401100: Barrier.012
+    6401102: Barrier.013
+    6401104: Barrier.016
+    6401106: Barrier.017
+    6401108: Barrier.018
+    6401110: Barrier.020
+    6401112: Barrier.021
+    6401114: Bridge.176
+    6401116: Object028
+    6401118: Object029
+    6401120: Object051
+    6401122: Object052
+    6401124: Object053
+    6401126: Object054
+    6401128: Object055
+    6401130: Object056
+    6401132: Object057
+    6401134: Object058
+    6401136: Object059
+    6401138: Object060
+    6401140: Object077
+    6401142: Object096
+    6401144: Object097
+    6401146: Object120
+    6401148: Object121
     9500000: //RootNode
   materials:
     importMaterials: 1
