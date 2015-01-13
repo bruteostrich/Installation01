@@ -207,6 +207,8 @@ ModelImporter:
     100402: TowerCapR.002
     100404: TowerRoomFloorB.002
     100406: TowerRoomFloorT.002
+    100408: Bridge.177
+    100410: Cylinder001
     400000: Barrier.000
     400002: Barrier.001
     400004: Barrier.003
@@ -411,6 +413,8 @@ ModelImporter:
     400402: TowerCapR.002
     400404: TowerRoomFloorB.002
     400406: TowerRoomFloorT.002
+    400408: Bridge.177
+    400410: Cylinder001
     2300000: Barrier.000
     2300002: Barrier.001
     2300004: Barrier.003
@@ -592,6 +596,8 @@ ModelImporter:
     2300356: TowerCapR.002
     2300358: TowerRoomFloorB.002
     2300360: TowerRoomFloorT.002
+    2300362: Bridge.177
+    2300364: Cylinder001
     3300000: Barrier.000
     3300002: Barrier.001
     3300004: Barrier.003
@@ -773,6 +779,8 @@ ModelImporter:
     3300356: TowerCapR.002
     3300358: TowerRoomFloorB.002
     3300360: TowerRoomFloorT.002
+    3300362: Bridge.177
+    3300364: Cylinder001
     4300000: Object013
     4300002: Bridge.094
     4300004: Edge.193
@@ -954,6 +962,8 @@ ModelImporter:
     4300356: Box018
     4300358: MediumPillar.036
     4300360: Clusters:004.001
+    4300362: Cylinder001
+    4300364: Bridge.177
     9500000: //RootNode
   materials:
     importMaterials: 1
