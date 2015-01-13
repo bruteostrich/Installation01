@@ -598,6 +598,10 @@ ModelImporter:
     101184: Object147
     101186: Object148
     101188: Object149
+    101190: Barrier.002
+    101192: Barrier.005
+    101194: Barrier.008
+    101196: Instances:light_fixture_warm14
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -1193,6 +1197,10 @@ ModelImporter:
     401184: Object147
     401186: Object148
     401188: Object149
+    401190: Barrier.002
+    401192: Barrier.005
+    401194: Barrier.008
+    401196: Instances:light_fixture_warm14
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -1775,6 +1783,11 @@ ModelImporter:
     2301158: Object147
     2301160: Object148
     2301162: Object149
+    2301164: Barrier.002
+    2301166: Barrier.005
+    2301168: Barrier.008
+    2301170: Instances:light_fixture_warm14
+    2301172: //RootNode
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -2357,6 +2370,11 @@ ModelImporter:
     3301158: Object147
     3301160: Object148
     3301162: Object149
+    3301164: Barrier.002
+    3301166: Barrier.005
+    3301168: Barrier.008
+    3301170: Instances:light_fixture_warm14
+    3301172: //RootNode
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -2937,6 +2955,10 @@ ModelImporter:
     4301154: Box018
     4301156: MediumPillar.036
     4301158: Clusters:004.001
+    4301160: Barrier.002
+    4301162: Barrier.005
+    4301164: Barrier.008
+    4301166: Instances:light_fixture_warm14
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -3519,6 +3541,11 @@ ModelImporter:
     6401158: Object147
     6401160: Object148
     6401162: Object149
+    6401164: Barrier.002
+    6401166: Barrier.005
+    6401168: Barrier.008
+    6401170: Instances:light_fixture_warm14
+    6401172: //RootNode
     9500000: //RootNode
   materials:
     importMaterials: 1
