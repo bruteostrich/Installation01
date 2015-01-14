@@ -10,6 +10,8 @@ public class NetworkPlayer : Photon.MonoBehaviour
     public GameObject firstPersonObject;
     public GameObject thirdPersonObject;
 
+	public Transform player;
+
 	public Texture2D crosshair;
 	public Texture2D HUDOverlay;
 	public Texture2D motionTracker; 
