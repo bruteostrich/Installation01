@@ -239,6 +239,7 @@ ModelImporter:
     4300090: _explosion_poa_back
     4300092: __unnamed
     9500000: //RootNode
+    11100000: //RootNode
     13700000: __unnamed
   materials:
     importMaterials: 1
@@ -291,6 +292,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   additionalBone: 0
   userData: 
