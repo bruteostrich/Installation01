@@ -630,6 +630,66 @@ ModelImporter:
     101248: Object157
     101250: Object158
     101252: Toplibrary
+    101254: Barrier.015
+    101256: Barrier.019
+    101258: Barrier.022
+    101260: Barrier.023
+    101262: Barrier.024
+    101264: Barrier.025
+    101266: Barrier.026
+    101268: Barrier.027
+    101270: Barrier.028
+    101272: Barrier.029
+    101274: Barrier.030
+    101276: Barrier.031
+    101278: Barrier.032
+    101280: Barrier.033
+    101282: Barrier.034
+    101284: Barrier.035
+    101286: Barrier.036
+    101288: Barrier.037
+    101290: Barrier.038
+    101292: Barrier.039
+    101294: Barrier.040
+    101296: Barrier.041
+    101298: Barrier.042
+    101300: Barrier.043
+    101302: Barrier.044
+    101304: Barrier.045
+    101306: Barrier.046
+    101308: Barrier.047
+    101310: Barrier.048
+    101312: Barrier.049
+    101314: Barrier.050
+    101316: Barrier.051
+    101318: Barrier.052
+    101320: Barrier.053
+    101322: Barrier.054
+    101324: Barrier.055
+    101326: Barrier.056
+    101328: Barrier.057
+    101330: Barrier.058
+    101332: Barrier.059
+    101334: Barrier.060
+    101336: Barrier.061
+    101338: Barrier.062
+    101340: Barrier.063
+    101342: Barrier.064
+    101344: Barrier.065
+    101346: Barrier.066
+    101348: Barrier.067
+    101350: Barrier.068
+    101352: Barrier.069
+    101354: Barrier.070
+    101356: Barrier.071
+    101358: Barrier.072
+    101360: Barrier.073
+    101362: Barrier.074
+    101364: Barrier.075
+    101366: Barrier.076
+    101368: Barrier.077
+    101370: Object155.001
+    101372: Object155.002
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -1257,6 +1317,66 @@ ModelImporter:
     401248: Object157
     401250: Object158
     401252: Toplibrary
+    401254: Barrier.015
+    401256: Barrier.019
+    401258: Barrier.022
+    401260: Barrier.023
+    401262: Barrier.024
+    401264: Barrier.025
+    401266: Barrier.026
+    401268: Barrier.027
+    401270: Barrier.028
+    401272: Barrier.029
+    401274: Barrier.030
+    401276: Barrier.031
+    401278: Barrier.032
+    401280: Barrier.033
+    401282: Barrier.034
+    401284: Barrier.035
+    401286: Barrier.036
+    401288: Barrier.037
+    401290: Barrier.038
+    401292: Barrier.039
+    401294: Barrier.040
+    401296: Barrier.041
+    401298: Barrier.042
+    401300: Barrier.043
+    401302: Barrier.044
+    401304: Barrier.045
+    401306: Barrier.046
+    401308: Barrier.047
+    401310: Barrier.048
+    401312: Barrier.049
+    401314: Barrier.050
+    401316: Barrier.051
+    401318: Barrier.052
+    401320: Barrier.053
+    401322: Barrier.054
+    401324: Barrier.055
+    401326: Barrier.056
+    401328: Barrier.057
+    401330: Barrier.058
+    401332: Barrier.059
+    401334: Barrier.060
+    401336: Barrier.061
+    401338: Barrier.062
+    401340: Barrier.063
+    401342: Barrier.064
+    401344: Barrier.065
+    401346: Barrier.066
+    401348: Barrier.067
+    401350: Barrier.068
+    401352: Barrier.069
+    401354: Barrier.070
+    401356: Barrier.071
+    401358: Barrier.072
+    401360: Barrier.073
+    401362: Barrier.074
+    401364: Barrier.075
+    401366: Barrier.076
+    401368: Barrier.077
+    401370: Object155.001
+    401372: Object155.002
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -1872,6 +1992,66 @@ ModelImporter:
     2301224: Object157
     2301226: Object158
     2301228: Toplibrary
+    2301230: Barrier.015
+    2301232: Barrier.019
+    2301234: Barrier.022
+    2301236: Barrier.023
+    2301238: Barrier.024
+    2301240: Barrier.025
+    2301242: Barrier.026
+    2301244: Barrier.027
+    2301246: Barrier.028
+    2301248: Barrier.029
+    2301250: Barrier.030
+    2301252: Barrier.031
+    2301254: Barrier.032
+    2301256: Barrier.033
+    2301258: Barrier.034
+    2301260: Barrier.035
+    2301262: Barrier.036
+    2301264: Barrier.037
+    2301266: Barrier.038
+    2301268: Barrier.039
+    2301270: Barrier.040
+    2301272: Barrier.041
+    2301274: Barrier.042
+    2301276: Barrier.043
+    2301278: Barrier.044
+    2301280: Barrier.045
+    2301282: Barrier.046
+    2301284: Barrier.047
+    2301286: Barrier.048
+    2301288: Barrier.049
+    2301290: Barrier.050
+    2301292: Barrier.051
+    2301294: Barrier.052
+    2301296: Barrier.053
+    2301298: Barrier.054
+    2301300: Barrier.055
+    2301302: Barrier.056
+    2301304: Barrier.057
+    2301306: Barrier.058
+    2301308: Barrier.059
+    2301310: Barrier.060
+    2301312: Barrier.061
+    2301314: Barrier.062
+    2301316: Barrier.063
+    2301318: Barrier.064
+    2301320: Barrier.065
+    2301322: Barrier.066
+    2301324: Barrier.067
+    2301326: Barrier.068
+    2301328: Barrier.069
+    2301330: Barrier.070
+    2301332: Barrier.071
+    2301334: Barrier.072
+    2301336: Barrier.073
+    2301338: Barrier.074
+    2301340: Barrier.075
+    2301342: Barrier.076
+    2301344: Barrier.077
+    2301346: Object155.001
+    2301348: Object155.002
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -2487,6 +2667,66 @@ ModelImporter:
     3301224: Object157
     3301226: Object158
     3301228: Toplibrary
+    3301230: Barrier.015
+    3301232: Barrier.019
+    3301234: Barrier.022
+    3301236: Barrier.023
+    3301238: Barrier.024
+    3301240: Barrier.025
+    3301242: Barrier.026
+    3301244: Barrier.027
+    3301246: Barrier.028
+    3301248: Barrier.029
+    3301250: Barrier.030
+    3301252: Barrier.031
+    3301254: Barrier.032
+    3301256: Barrier.033
+    3301258: Barrier.034
+    3301260: Barrier.035
+    3301262: Barrier.036
+    3301264: Barrier.037
+    3301266: Barrier.038
+    3301268: Barrier.039
+    3301270: Barrier.040
+    3301272: Barrier.041
+    3301274: Barrier.042
+    3301276: Barrier.043
+    3301278: Barrier.044
+    3301280: Barrier.045
+    3301282: Barrier.046
+    3301284: Barrier.047
+    3301286: Barrier.048
+    3301288: Barrier.049
+    3301290: Barrier.050
+    3301292: Barrier.051
+    3301294: Barrier.052
+    3301296: Barrier.053
+    3301298: Barrier.054
+    3301300: Barrier.055
+    3301302: Barrier.056
+    3301304: Barrier.057
+    3301306: Barrier.058
+    3301308: Barrier.059
+    3301310: Barrier.060
+    3301312: Barrier.061
+    3301314: Barrier.062
+    3301316: Barrier.063
+    3301318: Barrier.064
+    3301320: Barrier.065
+    3301322: Barrier.066
+    3301324: Barrier.067
+    3301326: Barrier.068
+    3301328: Barrier.069
+    3301330: Barrier.070
+    3301332: Barrier.071
+    3301334: Barrier.072
+    3301336: Barrier.073
+    3301338: Barrier.074
+    3301340: Barrier.075
+    3301342: Barrier.076
+    3301344: Barrier.077
+    3301346: Object155.001
+    3301348: Object155.002
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -3099,6 +3339,66 @@ ModelImporter:
     4301218: Object157
     4301220: Object158
     4301222: Toplibrary
+    4301224: Barrier.077
+    4301226: Barrier.076
+    4301228: Barrier.075
+    4301230: Barrier.074
+    4301232: Barrier.073
+    4301234: Barrier.072
+    4301236: Barrier.071
+    4301238: Barrier.070
+    4301240: Barrier.069
+    4301242: Barrier.068
+    4301244: Barrier.067
+    4301246: Barrier.066
+    4301248: Barrier.065
+    4301250: Barrier.064
+    4301252: Barrier.063
+    4301254: Barrier.062
+    4301256: Barrier.061
+    4301258: Barrier.060
+    4301260: Barrier.059
+    4301262: Barrier.058
+    4301264: Barrier.057
+    4301266: Barrier.056
+    4301268: Barrier.055
+    4301270: Barrier.054
+    4301272: Barrier.053
+    4301274: Barrier.052
+    4301276: Barrier.051
+    4301278: Barrier.050
+    4301280: Barrier.049
+    4301282: Barrier.048
+    4301284: Barrier.047
+    4301286: Object155.002
+    4301288: Object155.001
+    4301290: Barrier.046
+    4301292: Barrier.045
+    4301294: Barrier.044
+    4301296: Barrier.043
+    4301298: Barrier.042
+    4301300: Barrier.041
+    4301302: Barrier.040
+    4301304: Barrier.039
+    4301306: Barrier.038
+    4301308: Barrier.037
+    4301310: Barrier.036
+    4301312: Barrier.035
+    4301314: Barrier.034
+    4301316: Barrier.033
+    4301318: Barrier.032
+    4301320: Barrier.031
+    4301322: Barrier.030
+    4301324: Barrier.029
+    4301326: Barrier.028
+    4301328: Barrier.027
+    4301330: Barrier.026
+    4301332: Barrier.025
+    4301334: Barrier.024
+    4301336: Barrier.023
+    4301338: Barrier.022
+    4301340: Barrier.019
+    4301342: Barrier.015
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -3714,6 +4014,66 @@ ModelImporter:
     6401224: Object157
     6401226: Object158
     6401228: Toplibrary
+    6401230: Barrier.015
+    6401232: Barrier.019
+    6401234: Barrier.022
+    6401236: Barrier.023
+    6401238: Barrier.024
+    6401240: Barrier.025
+    6401242: Barrier.026
+    6401244: Barrier.027
+    6401246: Barrier.028
+    6401248: Barrier.029
+    6401250: Barrier.030
+    6401252: Barrier.031
+    6401254: Barrier.032
+    6401256: Barrier.033
+    6401258: Barrier.034
+    6401260: Barrier.035
+    6401262: Barrier.036
+    6401264: Barrier.037
+    6401266: Barrier.038
+    6401268: Barrier.039
+    6401270: Barrier.040
+    6401272: Barrier.041
+    6401274: Barrier.042
+    6401276: Barrier.043
+    6401278: Barrier.044
+    6401280: Barrier.045
+    6401282: Barrier.046
+    6401284: Barrier.047
+    6401286: Barrier.048
+    6401288: Barrier.049
+    6401290: Barrier.050
+    6401292: Barrier.051
+    6401294: Barrier.052
+    6401296: Barrier.053
+    6401298: Barrier.054
+    6401300: Barrier.055
+    6401302: Barrier.056
+    6401304: Barrier.057
+    6401306: Barrier.058
+    6401308: Barrier.059
+    6401310: Barrier.060
+    6401312: Barrier.061
+    6401314: Barrier.062
+    6401316: Barrier.063
+    6401318: Barrier.064
+    6401320: Barrier.065
+    6401322: Barrier.066
+    6401324: Barrier.067
+    6401326: Barrier.068
+    6401328: Barrier.069
+    6401330: Barrier.070
+    6401332: Barrier.071
+    6401334: Barrier.072
+    6401336: Barrier.073
+    6401338: Barrier.074
+    6401340: Barrier.075
+    6401342: Barrier.076
+    6401344: Barrier.077
+    6401346: Object155.001
+    6401348: Object155.002
     9500000: //RootNode
   materials:
     importMaterials: 1
