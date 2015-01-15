@@ -73,18 +73,34 @@ public class NetworkPlayer : Photon.MonoBehaviour
     private void GetHit (float damage)
     {
         if(playerStats.shields > 0)
-			playerStats.shields -= damage;
+		playerStats.shields -= damage;
         else
-			playerStats.health -= damage;
+		playerStats.health -= damage;
 
-		if(playerStats.shields < 0)
-			playerStats.shields = 0;
+	if(playerStats.shields < 0)
+		playerStats.shields = 0;
 
-		if (playerStats.health <= 0)
+	if (playerStats.health <= 0)
         {
-			Spawn ();
+		Spawn ();
+		//Die ();
         }
     }
+    
+    /*
+    IENumerator Die()
+    {
+	if(photonView.isMine)
+	{
+	    	this.firstPersonObject.SetActive (false);
+		this.thirdPersonObject.SetActive (false);
+		
+		yield return new WaitForSeconds(3);
+		
+		Spawn(); 
+	}
+    }
+    */
 
 	void Spawn()
 	{
@@ -115,6 +131,7 @@ public class NetworkPlayer : Photon.MonoBehaviour
 		if(photonView.isMine)
 		{
 			this.firstPersonObject.SetActive (true);
+			//this.thirdPersonObject.SetActive (true);
 		}
 	}
 
