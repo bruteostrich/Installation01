@@ -690,6 +690,8 @@ ModelImporter:
     101368: Barrier.077
     101370: Object155.001
     101372: Object155.002
+    101374: Barrier.078
+    101376: Barrier.079
     400000: Bridge.000
     400002: Bridge.001
     400004: Bridge.002
@@ -1377,6 +1379,8 @@ ModelImporter:
     401368: Barrier.077
     401370: Object155.001
     401372: Object155.002
+    401374: Barrier.078
+    401376: Barrier.079
     2300000: Bridge.000
     2300002: Bridge.001
     2300004: Bridge.002
@@ -2052,6 +2056,8 @@ ModelImporter:
     2301344: Barrier.077
     2301346: Object155.001
     2301348: Object155.002
+    2301350: Barrier.078
+    2301352: Barrier.079
     3300000: Bridge.000
     3300002: Bridge.001
     3300004: Bridge.002
@@ -2727,6 +2733,8 @@ ModelImporter:
     3301344: Barrier.077
     3301346: Object155.001
     3301348: Object155.002
+    3301350: Barrier.078
+    3301352: Barrier.079
     4300000: Edge.021
     4300002: Bridge.013
     4300004: Edge.020
@@ -3399,6 +3407,8 @@ ModelImporter:
     4301338: Barrier.022
     4301340: Barrier.019
     4301342: Barrier.015
+    4301344: Barrier.078
+    4301346: Barrier.079
     6400000: Bridge.000
     6400002: Bridge.001
     6400004: Bridge.002
@@ -4074,6 +4084,8 @@ ModelImporter:
     6401344: Barrier.077
     6401346: Object155.001
     6401348: Object155.002
+    6401350: Barrier.078
+    6401352: Barrier.079
     9500000: //RootNode
   materials:
     importMaterials: 1
