@@ -1,20 +1,15 @@
 fileFormatVersion: 2
-guid: 3edd4481b2a080144b64b9dcf48421b7
+guid: 027c82999c95e574198e7f75060a9538
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: __unnamed
-    100002: frame_ring
-    100004: //RootNode
-    400000: __unnamed
-    400002: frame_ring
-    400004: //RootNode
-    2300000: __unnamed
-    2300002: frame_ring
-    3300000: __unnamed
-    3300002: frame_ring
-    4300000: __unnamed
-    4300002: frame_ring
+    100000: default
+    100002: //RootNode
+    400000: default
+    400002: //RootNode
+    2300000: default
+    3300000: default
+    4300000: default
     9500000: //RootNode
   materials:
     importMaterials: 1

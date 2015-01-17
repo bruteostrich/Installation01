@@ -7,7 +7,9 @@ public class GrenadeManager : MonoBehaviour
 
 	public int grenadeCountStart;
 	[HideInInspector]
-	public int grenadeCountGame; 
+	public int grenadeCountGame;
+
+	public float throwLength = WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation.clip.length;
 
 	[HideInInspector]
 	public float timer;

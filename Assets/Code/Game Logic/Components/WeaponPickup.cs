@@ -26,7 +26,7 @@ public class WeaponPickup : Photon.MonoBehaviour
 						GroundWeapon weapon = Go.gameObject.transform.GetComponent<GroundWeapon>();
 						if(WeaponManager.instance.curWepList[0] != WeaponManager.instance.weaponsList[weapon.weaponNumber] && WeaponManager.instance.curWepList[1] != WeaponManager.instance.weaponsList[weapon.weaponNumber])
 						{
-							Instantiate(floorWeapons[WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weaponNumber], player.position, Quaternion.Euler(Random.Range (0,30), Random.Range(0,30), Random.Range(0,30)));
+							Instantiate(floorWeapons[WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weaponNumber], player.position, Quaternion.Euler(Random.Range (30,50), Random.Range(30,50), Random.Range(30,50)));
 							WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].gameObject.SetActive(false);
 							WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon] = WeaponManager.instance.weaponsList[weapon.weaponNumber];
 							WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.bulletsPerMag = WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.bulletsPerMagStart;

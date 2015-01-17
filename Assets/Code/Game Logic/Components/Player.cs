@@ -23,7 +23,11 @@ namespace GameLogic
 
 		//For holding the animations as well as getting the speed to play them at. 
 		public Transform WalkAnimationHolder;
+		public Transform CamAnimationHolder;
 		public float velocityMag;
+
+		private bool left; 
+		private bool right;
 
         void Start()
         {
@@ -31,6 +35,9 @@ namespace GameLogic
             InitializeInternals();
             Screen.lockCursor = true;
             Screen.showCursor = false;
+
+			left = true;
+			right = false;
         }
 
         void FixedUpdate()
@@ -55,8 +62,30 @@ namespace GameLogic
 					charMotor.movement.maxBackwardsSpeed = runSpeed - 1;
 					charMotor.movement.maxGroundAcceleration = 25;
 					
-					WalkAnimationHolder.animation["Run"].speed = velocityMag / runSpeed ;
-					WalkAnimationHolder.animation.CrossFade("Run",0.2f);
+					if(!WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isReloading && !WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isMelee && WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.fireRateCooler == 0 && GrenadeManager.instance.timer == 0)
+					{
+						WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation["Walk"].speed = velocityMag / runSpeed ;
+						WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation.CrossFade("Walk",0.2f);
+					}
+
+					if(left == true)
+					{
+						if(!CamAnimationHolder.animation.isPlaying)
+						{
+							CamAnimationHolder.animation.Play("walkLeft1");
+							left = false;
+							right = true;
+						}
+					}
+					if(right == true)
+					{
+						if(!CamAnimationHolder.animation.isPlaying)
+						{
+							CamAnimationHolder.animation.Play("walkRight1");
+							right = false;
+							left = true;
+						}
+					}
 				}
 				else
 				{
@@ -65,13 +94,17 @@ namespace GameLogic
 					charMotor.movement.maxBackwardsSpeed = walkSpeed - 1;
 					charMotor.movement.maxGroundAcceleration = 50;
 
-					WalkAnimationHolder.animation["Walk"].speed = velocityMag / walkSpeed ;
-					WalkAnimationHolder.animation.CrossFade("Walk",0.2f);
+					if(!WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isReloading && !WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isMelee && WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.fireRateCooler == 0 && GrenadeManager.instance.timer == 0)
+					{
+						WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation["Walk"].speed = velocityMag / walkSpeed ;
+						WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation.CrossFade("Walk",0.2f);
+					}
 				}
 			}
 			else
 			{
-				WalkAnimationHolder.animation.CrossFade("Idle",0.2f);
+				if(!WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isReloading && !WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isMelee && WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.fireRateCooler == 0 && GrenadeManager.instance.timer == 0)
+					WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation.CrossFade("Idle",0.2f);
 			}
 		}
 
