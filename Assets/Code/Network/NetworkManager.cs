@@ -22,6 +22,8 @@ public class NetworkManager : Photon.MonoBehaviour
         // Keep gameobject between scenes to handle network events
         DontDestroyOnLoad(this.gameObject);
         this.ConnectToServer();
+		PhotonNetwork.sendRate = 25;
+		PhotonNetwork.sendRateOnSerialize = 25; 
     }
 
     #region For Testing / Debugging Only
@@ -179,7 +181,6 @@ public class NetworkManager : Photon.MonoBehaviour
     private void SpawnPlayer ()
     {
         GameObject player = PhotonNetwork.Instantiate("Player Controller", new Vector3(0, 10, 0), Quaternion.identity, 0);
-
         this.Loadlevel();
     }
 }

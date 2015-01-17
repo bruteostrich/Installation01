@@ -4,15 +4,18 @@ using System.Collections.Generic;
 
 public class WeaponManager : MonoBehaviour 
 {
-	public List<Weapon> weaponsList = new List<Weapon>(); 
+	public static WeaponManager instance; 
+	public List<Weapon> weaponsList = new List<Weapon>();
+	public List<Weapon> curWepList = new List<Weapon>(); 
 	public int curWeapon; 
 
 	void Start () 
 	{
+		instance = this; 
 		curWeapon = 0;
-		weaponsList [curWeapon].gameObject.SetActive (true);
-		audio.PlayOneShot(weaponsList[curWeapon].weapon.draw);
-		weaponsList[curWeapon].DrawGun ();
+		curWepList [curWeapon].gameObject.SetActive (true);
+		audio.PlayOneShot(curWepList[curWeapon].weapon.draw);
+		curWepList[curWeapon].DrawGun ();
 	}
 	
 
@@ -25,11 +28,11 @@ public class WeaponManager : MonoBehaviour
 			else
 				curWeapon = 0;
 
-			foreach (Weapon we in weaponsList)
+			foreach (Weapon we in curWepList)
 			{
 				we.isReloading = false;
 				we.isMelee = false; 
-				if(we != weaponsList[curWeapon])
+				if(we != curWepList[curWeapon])
 					we.gameObject.SetActive(false);
 				else
 				{

@@ -8,6 +8,8 @@ public class Weapon : MonoBehaviour
 	public WeaponStats weapon;
 	public WeaponType weaponType;
 
+	public int weaponNumber; 
+
 	public bool fullReload; 
 	public bool isReloading;
 	public bool isMelee;
@@ -51,16 +53,31 @@ public class Weapon : MonoBehaviour
 			else
 				weapon.ammoCounter.text = "00";
 		}
+		
+		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee && weaponType == WeaponType.Shotgun)
+		{
+			audio.PlayOneShot (weapon.fire);
+			Instantiate(weapon.muzzleflash, weapon.muzzleFlashSpawn.position, weapon.muzzleFlashSpawn.rotation);
+			weapon.bulletsPerMag--;
 
-		if(Input.GetMouseButton(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee && weaponType == WeaponType.Auto)
-			Fire(); 
+			if(weaponType == WeaponType.Shotgun)
+				for(int i = 0; i < 8; i++)
+					Fire(); 
+		}
 
-		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee && weaponType == WeaponType.Threeround)
+		if(Input.GetMouseButton(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee &&weaponType == WeaponType.Auto)
+			Fire();
+		
+		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee &&weaponType == WeaponType.Threeround)
 		{
 			Invoke("Fire", 0.08f);
 			Invoke("Fire", 0.16f);
-			Invoke("Fire", 0.24f);
+			Invoke("Fire", 0.24f);	
 		}
+
+		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee &&weaponType == WeaponType.Single)
+			Fire ();
+		
 
 		if(Input.GetKeyDown(KeyCode.F) && !isReloading && !isMelee)
 			Melee ();
@@ -93,6 +110,16 @@ public class Weapon : MonoBehaviour
 			Instantiate(hitParticles[0],hit.point,Quaternion.FromToRotation(Vector3.up, hit.normal));
 			Instantiate(hitHoles[0], hit.point  + hit.normal * 0.04f, Quaternion.FromToRotation(-hit.normal, -Vector3.forward));
 			audio.PlayOneShot(weapon.meleeHit);
+
+	        if (hit.collider.transform.root.tag == "Player")
+	        {
+				PhotonView photonview = hit.collider.transform.root.GetComponent<PhotonView>();
+		        if (photonview.isMine)
+		       		return;
+
+				float melee = 52.5f;
+				photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, melee);
+	        }
 		}
 	}
 
@@ -117,17 +144,23 @@ public class Weapon : MonoBehaviour
 
 	void Fire()
 	{
+		if(weaponType != WeaponType.Shotgun)
+			audio.PlayOneShot (weapon.fire);
+
 		Vector3 direction  = weapon.bulletSpawn.forward;
 		direction.x += Random.Range(-weapon.spread, weapon.spread);
 		direction.y += Random.Range(-weapon.spread, weapon.spread);
 		direction.z += Random.Range(-weapon.spread, weapon.spread);
 
 		weapon.fireRateCooler = weapon.fireRate;
-		weapon.bulletsPerMag--;
-		audio.PlayOneShot (weapon.fire);
+
+		if(weaponType != WeaponType.Shotgun)
+			weapon.bulletsPerMag--;
 
 		weapon.cameraKickback += new Vector3(weapon.cameraRotation.x, Random.Range(-weapon.cameraRotation.y, weapon.cameraRotation.y));
-		Instantiate(weapon.muzzleflash, weapon.muzzleFlashSpawn.position, weapon.muzzleFlashSpawn.rotation); 
+
+		if(weaponType != WeaponType.Shotgun)
+			Instantiate(weapon.muzzleflash, weapon.muzzleFlashSpawn.position, weapon.muzzleFlashSpawn.rotation); 
 
 		RaycastHit hit;
 		
@@ -135,6 +168,15 @@ public class Weapon : MonoBehaviour
 		{
 			Instantiate(hitParticles[0],hit.point,Quaternion.FromToRotation(Vector3.up, hit.normal));
 			Instantiate(hitHoles[0], hit.point  + hit.normal * 0.04f, Quaternion.FromToRotation(-hit.normal, -Vector3.forward));
+
+	        if (hit.collider.transform.root.tag == "Player")
+	        {
+		        PhotonView photonview = hit.collider.transform.root.GetComponent<PhotonView>();
+		        if (photonview.isMine)
+		            return;
+		
+				photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, weapon.damage);
+			}
 		}
 
 		if(weapon.bulletsPerMag > 0)
@@ -196,7 +238,7 @@ public class Weapon : MonoBehaviour
 	
 	void OnGUI()
 	{
-		GUI.Box (new Rect (10, 10, 100, 23), weapon.bulletsPerMag.ToString () + " / " + weapon.spareBullets.ToString());
+		GUI.Box (new Rect (Screen.width - 110, Screen.height - 33, 100, 23), weapon.bulletsPerMag.ToString () + " / " + weapon.spareBullets.ToString());
 	}
 }
 
@@ -226,7 +268,11 @@ public class WeaponStats
 	public Transform muzzleFlashSpawn; 
 
 	public GameObject muzzleflash; 
+	
+	public bool canZoomIn; 
 	public bool hasAmmoCounter;
+
+	public int aimFOV;
 
 	public TextMesh ammoCounter; 
 
@@ -240,5 +286,7 @@ public class WeaponStats
 public enum WeaponType
 {
 	Auto,
-	Threeround
+	Threeround,
+	Shotgun,
+	Single
 }
