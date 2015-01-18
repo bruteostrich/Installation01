@@ -23,6 +23,17 @@ public class Weapon : MonoBehaviour
 	[HideInInspector]
 	public int ammoHolder;
 
+    /// <summary>
+    /// Gets a value indicating whether the weapon can fire currently
+    /// </summary>
+    public bool CanFire
+    {
+        get
+        {
+            return weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee;
+        }
+    }
+
 	void Start () 
 	{
 		instance = this; 
@@ -54,7 +65,7 @@ public class Weapon : MonoBehaviour
 				weapon.ammoCounter.text = "00";
 		}
 		
-		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee && weaponType == WeaponType.Shotgun)
+		if(Input.GetMouseButtonDown(0) && CanFire && weaponType == WeaponType.Shotgun)
 		{
 			audio.PlayOneShot (weapon.fire);
 			Instantiate(weapon.muzzleflash, weapon.muzzleFlashSpawn.position, weapon.muzzleFlashSpawn.rotation);
@@ -65,22 +76,30 @@ public class Weapon : MonoBehaviour
 					Fire(); 
 		}
 
-		if(Input.GetMouseButton(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee &&weaponType == WeaponType.Auto)
-			Fire();
+        if (Input.GetMouseButton(0) && CanFire && weaponType == WeaponType.Auto)
+        {
+            Fire(); // same as WeaponType.Single?
+        }
 		
-		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee &&weaponType == WeaponType.Threeround)
+		if(Input.GetMouseButtonDown(0) && CanFire && weaponType == WeaponType.Threeround)
 		{
 			Invoke("Fire", 0.08f);
 			Invoke("Fire", 0.16f);
 			Invoke("Fire", 0.24f);	
 		}
 
-		if(Input.GetMouseButtonDown(0) && weapon.bulletsPerMag > 0 && weapon.fireRateCooler == 0 && !isReloading && !isMelee &&weaponType == WeaponType.Single)
-			Fire ();
-		
+        if (Input.GetMouseButtonDown(0) && CanFire && weaponType == WeaponType.Single)
+        {
+            Fire(); // this looks like a bug to alex.
+            //This functionality is exactly the same as WeaponType.Auto
+            //But this weapon is WeaponType.Single ?
+        }
 
-		if(Input.GetKeyDown(KeyCode.F) && !isReloading && !isMelee)
-			Melee ();
+
+        if (Input.GetKeyDown(KeyCode.F) && !isReloading && !isMelee)
+        {
+            Melee();
+        }
 
 		if(Input.GetKeyDown(KeyCode.R) && weapon.bulletsPerMag != 0 && isReloading == false && weapon.bulletsPerMag != weapon.bulletsPerMagStart && weapon.spareBullets != 0)
 		{
@@ -169,6 +188,8 @@ public class Weapon : MonoBehaviour
 			Instantiate(hitParticles[0],hit.point,Quaternion.FromToRotation(Vector3.up, hit.normal));
 			Instantiate(hitHoles[0], hit.point  + hit.normal * 0.04f, Quaternion.FromToRotation(-hit.normal, -Vector3.forward));
 
+            ApplyForceToProjectileHitObject(hit, direction, 5000);
+
 	        if (hit.collider.transform.root.tag == "Player")
 	        {
 		        PhotonView photonview = hit.collider.transform.root.GetComponent<PhotonView>();
@@ -193,6 +214,27 @@ public class Weapon : MonoBehaviour
 			StartCoroutine(Reload ());
 		}
 	}
+
+    /// <summary>
+    /// Used to apply physics force when a round hits an object
+    /// </summary>
+    /// <param name="Hit">RaycastHit for projectile</param>
+    /// <param name="ForceDirection">Direction of projectile travel</param>
+    /// <param name="Force">Ammount of force to apply to object</param>
+    private void ApplyForceToProjectileHitObject(RaycastHit Hit,Vector3 ForceDirection, float Force)
+    {
+        Rigidbody ObjectRigidBody = Hit.collider.gameObject.GetComponent<Rigidbody>();
+
+        if(ObjectRigidBody)
+        {
+            Vector3 DirectionNorm = ForceDirection;
+            DirectionNorm.Normalize();
+
+            DirectionNorm *= Force;
+
+            ObjectRigidBody.AddForceAtPosition(DirectionNorm, Hit.point);
+        }
+    }
 
 	public IEnumerator Reload()
 	{
