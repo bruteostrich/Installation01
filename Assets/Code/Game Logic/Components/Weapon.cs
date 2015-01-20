@@ -85,7 +85,7 @@ public class Weapon : MonoBehaviour
 		{
 			Invoke("Fire", 0.08f);
 			Invoke("Fire", 0.16f);
-			Invoke("Fire", 0.24f);	
+            Invoke("Fire", 0.24f);
 		}
 
         if (Input.GetMouseButtonDown(0) && CanFire && weaponType == WeaponType.Single)

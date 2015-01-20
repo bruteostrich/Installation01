@@ -33,7 +33,6 @@ public class Footsteps : MonoBehaviour
 				audio.clip = walkSounds[i];
 				audio.PlayOneShot(walkSounds[i]);
 				audioTimer = 20;
-				
 			}
 		}
 	}
