@@ -42,19 +42,21 @@ namespace GameLogic
 				Collider[] hits = Physics.OverlapSphere(transform.position, 10);
 				foreach (Collider co in hits)
 				{
-					if (co.gameObject.transform.root.tag == "Player")
-					{
-						Debug.Log ("DAMAGE");
-						PhotonView photonview = co.gameObject.transform.root.GetComponent<PhotonView>();
-						if (photonview.isMine)
-							return;
+                    if (co.gameObject.transform.root.tag == "Player")
+                    {
+                        Debug.Log("DAMAGE");
+                        PhotonView photonview = co.gameObject.transform.root.GetComponent<PhotonView>();
+                        if (photonview.isMine)
+                            return;
 
-						photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, 100.0f);
-						DestroyObject(gameObject);
+                        photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, 100.0f);
+                        DestroyObject(gameObject);
 
-					}
-					else
-						DestroyObject(gameObject);
+                    }
+                    else
+                    {
+                        DestroyObject(gameObject);
+                    }
 
 				}
 				DestroyObject(gameObject);
