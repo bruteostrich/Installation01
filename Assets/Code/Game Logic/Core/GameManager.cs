@@ -17,22 +17,20 @@ namespace GameLogic
         public GameMode InitialMode;
         private GameMode Mode;
 
-        private Cache<GameEntityCacheEntry> GameEntityCache;
-        private KeyedCache<string, object> ResourceCache;
-
         public string[] StartupAssets;
         private SpawnPointCollection SpawnPoints;
 
+        private bool _AssetsLoaded;
         /// <summary>
-        /// Gets a value indicating wether assets required to run the game have been loaded
+        /// Gets a value indicating wether the manager has loaded all assets they are required for gameplay to start.
         /// </summary>
         public bool AssetsLoaded
         {
-            get { return _AssetsLoaded; }
-            set { _AssetsLoaded = value; }
+            get
+            {
+                return _AssetsLoaded;
+            }
         }
-        private bool _AssetsLoaded;
-
         /// <summary>
         /// Gets a value indicating wether the GameManager has initialized all of the internal objects required for the game to start
         /// </summary>
@@ -44,18 +42,6 @@ namespace GameLogic
             }
         }
         private bool _InternalsInitialized;
-
-        /// <summary>
-        /// Gets a value indicating how many GameEntities are currently cached and tracked by the GameManager
-        /// </summary>
-        public int GameEntityCacheCount
-        {
-            get
-            {
-                return GameEntityCache.Count;
-            }
-        }
-
         /// <summary>
         /// Gets a value indicating wether the game is ready to start
         /// </summary>
@@ -67,17 +53,6 @@ namespace GameLogic
                     return true;
 
                 return false;
-            }
-        }
-
-        /// <summary>
-        /// Gets an value indicating the number of items in the resource cashe
-        /// </summary>
-        public int ResourceCacheItemCount
-        {
-            get
-            {
-                return ResourceCache.Count;
             }
         }
 
@@ -106,20 +81,10 @@ namespace GameLogic
         }
 
         /// <summary>
-        /// Spawns player CURRENTLY UNIMPLEMENTED
-        /// </summary>
-        private void SpawnPlayer()
-        {
-            
-        }
-
-        /// <summary>
         /// Initializes all objects/resources that GameManager needs to use
         /// </summary>
         private void InitializeInternals()
         {
-            ResourceCache = new KeyedCache<string, object>();
-            GameEntityCache = new Cache<GameEntityCacheEntry>();
 
             SpawnPoints = new SpawnPointCollection();
             SpawnPoints.CacheAll();
@@ -151,33 +116,15 @@ namespace GameLogic
         /// <param name="GameObjectHandle">Name of the resource entry in the resource cache</param>
         public void LoadGameObject(string GameObjectFile,string GameObjectHandle)
         {
-            if(ResourceCache.ContainsKey(GameObjectHandle))
-            {
-                UnityDebug.Log("GameManager is attempting to load: " + GameObjectHandle + " Twice. Blocked.");
-                return;
-            }
+            //if(ResourceCache.ContainsKey(GameObjectHandle))
+            //{
+            //    UnityDebug.Log("GameManager is attempting to load: " + GameObjectHandle + " Twice. Blocked.");
+            //    return;
+            //}
             GameObject LoadedObject = Resources.Load(GameObjectFile) as GameObject;
-            AddObjectToResourceCache(GameObjectHandle, LoadedObject);
+            //AddObjectToResourceCache(GameObjectHandle, LoadedObject);
         }
 
-        /// <summary>
-        /// Adds an object to the ResourceCache
-        /// </summary>
-        /// <param name="ObjectHandleName">Name of resource cache entry</param>
-        /// <param name="Handle">System.Object representing the resource</param>
-        public void AddObjectToResourceCache(string ObjectHandleName, object Handle)
-        {
-            ResourceCache.Add(ObjectHandleName, Handle);
-        }
-
-        public bool ResourceCacheContains(string Handle)
-        {
-            return ResourceCache.ContainsKey(Handle);
-        }
-        public object GetResourceCacheItemByName(string Name)
-        {
-            return ResourceCache[Name];
-        }
         /// <summary>
         /// Caches all game entities in the world
         /// </summary>
@@ -194,29 +141,25 @@ namespace GameLogic
 
             for (int i = 0; i < Entities.Length; ++i )
             {
-                AddGameEntityCacheEntry(Entities[i]);
+                //AddGameEntityCacheEntry(Entities[i]);
             }
         }
-        public void AddGameEntityCacheEntry(GameObject Entity)
-        {
-            GameEntityCacheEntry NewCacheEntry = new GameEntityCacheEntry(Entity);
-            GameEntityCache.Add(NewCacheEntry);
-        }
+
         private void RemoveGameEntityCacheEntry(GameEntityCacheEntry Entry)
         {
-            GameEntityCache.Remove(Entry);
+           // GameEntityCache.Remove(Entry);
         }
         public void RemoveGameEntityCacheEntry(int EntityHash)
         {
-            for(int i = 0; i < GameEntityCache.Count; ++i)
-            {
-                if(GameEntityCache[i].EntityHash == EntityHash)
-                {
-                    GameEntityCache.Remove(i);
+            //for(int i = 0; i < GameEntityCache.Count; ++i)
+            //{
+            //    if(GameEntityCache[i].EntityHash == EntityHash)
+            //    {
+            //        GameEntityCache.Remove(i);
 
-                    break;
-                }
-            }
+            //        break;
+            //    }
+            //}
         }
         /// <summary>
         /// Destroys game entity, removed it from the world and de-caches it in the GameEntityCache
@@ -224,28 +167,28 @@ namespace GameLogic
         /// <param name="EntityHash">Hash code of entity to destroy</param>
         private void DestroyGameEntity(int EntityHash)
         {
-            for(int i = 0; i < GameEntityCache.Count; ++i)
-            {
-                if(GameEntityCache[i].EntityHash == EntityHash)
-                {
-                    GameObject.Destroy(GameEntityCache[i].Entity);
+            //for(int i = 0; i < GameEntityCache.Count; ++i)
+            //{
+            //    if(GameEntityCache[i].EntityHash == EntityHash)
+            //    {
+            //        GameObject.Destroy(GameEntityCache[i].Entity);
 
-                    RemoveGameEntityCacheEntry(GameEntityCache[i].EntityHash);
-                }
-            }
+            //        RemoveGameEntityCacheEntry(GameEntityCache[i].EntityHash);
+            //    }
+            //}
         }
 
         public List<GameObject> GetAllEntitesTagged(Tag EntityTag)
         {
             List<GameObject> GameObjects = new List<GameObject>();
             
-            for(int i = 0; i < GameEntityCache.Count; ++i)
-            {
-                if(GameEntityCache[i].Tag.Is(EntityTag))
-                {
-                    GameObjects.Add(GameEntityCache[i].Entity);
-                }
-            }
+            //for(int i = 0; i < GameEntityCache.Count; ++i)
+            //{
+            //    if(GameEntityCache[i].Tag.Is(EntityTag))
+            //    {
+            //        GameObjects.Add(GameEntityCache[i].Entity);
+            //    }
+            //}
 
             return GameObjects;
         }

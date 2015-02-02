@@ -29,7 +29,7 @@ namespace GameLogic
         {
             if(!ManagerFound)
             {
-                _Manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+                //_Manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
                 ManagerFound = true;
             }
         }
