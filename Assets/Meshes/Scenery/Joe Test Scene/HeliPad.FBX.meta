@@ -65,6 +65,18 @@ ModelImporter:
     4300018: Box136
     4300020: Box137
     4300022: Box138
+    6400000: Box120
+    6400002: Box122
+    6400004: Box123
+    6400006: Box124
+    6400008: Box125
+    6400010: Box126
+    6400012: Box127
+    6400014: Box133
+    6400016: Box135
+    6400018: Box136
+    6400020: Box137
+    6400022: Box138
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -87,10 +99,10 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: .00999999978
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1
