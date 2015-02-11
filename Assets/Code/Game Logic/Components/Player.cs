@@ -62,7 +62,7 @@ namespace GameLogic
 					charMotor.movement.maxBackwardsSpeed = runSpeed - 1;
 					charMotor.movement.maxGroundAcceleration = 25;
 					
-					if(!WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isReloading && !WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isMelee && WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.fireRateCooler == 0 && GrenadeManager.instance.timer == 0)
+					if(!WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isReloading && !WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isMelee && WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.fireRateCooler == 0 ) // && GrenadeManager.instance.timer == 0)
 					{
 						WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation["Walk"].speed = velocityMag / runSpeed ;
 						WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation.CrossFade("Walk",0.2f);
@@ -94,7 +94,7 @@ namespace GameLogic
 					charMotor.movement.maxBackwardsSpeed = walkSpeed - 1;
 					charMotor.movement.maxGroundAcceleration = 50;
 
-					if(!WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isReloading && !WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isMelee && WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.fireRateCooler == 0 && GrenadeManager.instance.timer == 0)
+					if(!WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isReloading && !WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isMelee && WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.fireRateCooler == 0 ) // && GrenadeManager.instance.timer == 0)
 					{
 						WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation["Walk"].speed = velocityMag / walkSpeed ;
 						WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation.CrossFade("Walk",0.2f);
@@ -103,7 +103,7 @@ namespace GameLogic
 			}
 			else
 			{
-				if(!WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isReloading && !WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isMelee && WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.fireRateCooler == 0 && GrenadeManager.instance.timer == 0)
+				if(!WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isReloading && !WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isMelee && WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.fireRateCooler == 0 ) // && GrenadeManager.instance.timer == 0)
 					WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation.CrossFade("Idle",0.2f);
 			}
 		}
@@ -115,7 +115,7 @@ namespace GameLogic
 
         private void AcquireGameManager()
         {
-           // Manager = GameManagerLocator.Manager;
+            Manager = GameManagerLocator.Manager;
         }
     }
 }
