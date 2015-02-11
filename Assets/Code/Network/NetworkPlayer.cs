@@ -122,7 +122,7 @@ public class NetworkPlayer : Photon.MonoBehaviour
 		WeaponManager.instance.curWepList [0].weapon.bulletsPerMag = WeaponManager.instance.curWepList [0].weapon.bulletsPerMagStart;
 		WeaponManager.instance.curWepList [1].weapon.bulletsPerMag = WeaponManager.instance.curWepList [1].weapon.bulletsPerMagStart;
 
-		GrenadeManager.instance.grenadeCountGame = GrenadeManager.instance.grenadeCountStart; 
+		//GrenadeManager.instance.grenadeCountGame = GrenadeManager.instance.grenadeCountStart; 
 
 		int spawnPoints = Random.Range(0,SpawnPointManager.instance.spawnPoints.Length -1);
 		this.firstPersonObject.transform.position = SpawnPointManager.instance.spawnPoints[spawnPoints].transform.position;
