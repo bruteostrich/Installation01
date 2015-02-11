@@ -29,6 +29,8 @@ namespace GameLogic
 		private bool left; 
 		private bool right;
 
+        private GameObject TestGrenadePrefab;
+
         void Start()
         {
 	    	instance = this; 
@@ -38,6 +40,13 @@ namespace GameLogic
 
 			left = true;
 			right = false;
+
+            TestGrenadePrefab = (GameObject)Resources.Load("Prefabs/Grenade");
+
+            if(TestGrenadePrefab == null)
+            {
+                Debug.Log("Grenade prefab not loaded");
+            }
         }
 
         void FixedUpdate()
@@ -48,7 +57,11 @@ namespace GameLogic
 
 		void Update()
 		{
-
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                GameObject Grenade = Instantiate(TestGrenadePrefab,transform.position,this.transform.rotation) as GameObject;
+                Grenade.name = "Grenade";
+            }
 		}
 
 		void SpeedController()
@@ -77,6 +90,7 @@ namespace GameLogic
 							right = true;
 						}
 					}
+
 					if(right == true)
 					{
 						if(!CamAnimationHolder.animation.isPlaying)

@@ -21,9 +21,11 @@ namespace GameLogic
     public sealed class Grenade : MonoBehaviour
     {
 		private GameManager Manager;
-		public GameObject Explosion;
 
-		public float timer = 3; 
+		public float Fuse = 3;
+        public float DamageRadius;
+
+        public GameObject ExplosionGameObject;
 	
         void Start()
         {
@@ -32,12 +34,14 @@ namespace GameLogic
 
         void Update()
         {
-			if(timer > 0)
-				timer -= Time.deltaTime; 
+            if (Fuse > 0)
+            {
+                Fuse -= Time.deltaTime;
+            }
 
-			if(timer <= 0)
+			if(Fuse <= 0)
 			{
-				Instantiate(Explosion, transform.position,transform.rotation);
+				Instantiate(ExplosionGameObject, transform.position,transform.rotation);
 
 				Collider[] hits = Physics.OverlapSphere(transform.position, 10);
 				foreach (Collider co in hits)
@@ -61,11 +65,6 @@ namespace GameLogic
 				}
 				DestroyObject(gameObject);
 			}
-        }
-
-        void FixedUpdate()
-        {
-
         }
     }
 }
