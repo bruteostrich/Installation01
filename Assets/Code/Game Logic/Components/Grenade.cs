@@ -20,11 +20,20 @@ namespace GameLogic
     [RequireComponent(typeof(Rigidbody))]
     public sealed class Grenade : MonoBehaviour
     {
-		private GameManager Manager;
-
+        /// <summary>
+        /// Grenade fuse time in seconds
+        /// </summary>
 		public float Fuse = 3;
+
+        /// <summary>
+        /// Damage radius in meters
+        /// </summary>
         public float DamageRadius;
 
+        /// <summary>
+        /// Explosion game object to be instantiated where and when the grenade detonates.
+        /// This is a cosmetic only
+        /// </summary>
         public GameObject ExplosionGameObject;
 	
         void Start()
@@ -51,7 +60,9 @@ namespace GameLogic
                         Debug.Log("DAMAGE");
                         PhotonView photonview = co.gameObject.transform.root.GetComponent<PhotonView>();
                         if (photonview.isMine)
+                        {
                             return;
+                        }
 
                         photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, 100.0f);
                         DestroyObject(gameObject);
