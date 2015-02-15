@@ -68,12 +68,13 @@ namespace GameLogic
 		{
 			if(Input.GetAxis("Horizontal") != 0 && charCont.isGrounded || Input.GetAxis("Vertical") != 0 && charCont.isGrounded)
 			{
-				if(Input.GetKey (KeyCode.LeftShift) && charCont.isGrounded)
+				/*if(Input.GetKey (KeyCode.LeftShift) && charCont.isGrounded)
 				{
 					charMotor.movement.maxForwardSpeed = runSpeed;
 					charMotor.movement.maxSidewaysSpeed = runSpeed;
 					charMotor.movement.maxBackwardsSpeed = runSpeed - 1;
 					charMotor.movement.maxGroundAcceleration = 25;
+
 					
 					if(!WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isReloading && !WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].isMelee && WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].weapon.fireRateCooler == 0 ) // && GrenadeManager.instance.timer == 0)
 					{
@@ -102,7 +103,7 @@ namespace GameLogic
 					}
 				}
 				else
-				{
+				{*/
 					charMotor.movement.maxForwardSpeed = walkSpeed;
 					charMotor.movement.maxSidewaysSpeed = walkSpeed;
 					charMotor.movement.maxBackwardsSpeed = walkSpeed - 1;
@@ -113,7 +114,7 @@ namespace GameLogic
 						WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation["Walk"].speed = velocityMag / walkSpeed ;
 						WeaponManager.instance.curWepList[WeaponManager.instance.curWeapon].animation.CrossFade("Walk",0.2f);
 					}
-				}
+				//}
 			}
 			else
 			{
