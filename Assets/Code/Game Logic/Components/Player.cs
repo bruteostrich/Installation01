@@ -57,9 +57,9 @@ namespace GameLogic
 
 		void Update()
 		{
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.G))
             {
-                GameObject Grenade = Instantiate(TestGrenadePrefab,transform.position,this.transform.rotation) as GameObject;
+                GameObject Grenade = Instantiate()
                 Grenade.name = "Grenade";
             }
 		}
