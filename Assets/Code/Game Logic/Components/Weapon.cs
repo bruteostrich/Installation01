@@ -188,7 +188,7 @@ public class Weapon : MonoBehaviour
 			Instantiate(hitParticles[0],hit.point,Quaternion.FromToRotation(Vector3.up, hit.normal));
 			Instantiate(hitHoles[0], hit.point  + hit.normal * 0.04f, Quaternion.FromToRotation(-hit.normal, -Vector3.forward));
 
-            ApplyForceToProjectileHitObject(hit, direction, 5000); // TODO: Change this depending on how much force should be exerted on the object that the projectile hits
+            ApplyForceToProjectileHitObject(hit, direction, 20 * weapon.damage); // TODO: Change this depending on how much force should be exerted on the object that the projectile hits
 
 	        if (hit.collider.transform.root.tag == "Player")
 	        {

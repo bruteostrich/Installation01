@@ -15,6 +15,9 @@ public class NetworkPlayer : Photon.MonoBehaviour
 	public Texture2D crosshair;
 	public Texture2D HUDOverlay;
 	public Texture2D motionTracker; 
+	public Texture2D shieldBar;
+	public Texture2D healthBar;
+	public Texture2D healthShieldOutline;
 
 	public int[] spawnWeaponNum; 
 	    
@@ -164,10 +167,16 @@ public class NetworkPlayer : Photon.MonoBehaviour
         {
 			if(playerStats.isAlive && !Application.isLoadingLevel)
 			{
-	            GUI.Box(new Rect(Screen.width / 3 - 5, 10, Screen.width / 3 + 10, 30), "");
-	            GUI.Box(new Rect(Screen.width / 3, 15, (playerStats.shields / 100) * Screen.width / 3, 20), "");
+	            //GUI.Box(new Rect(Screen.width / 3 - 5, 10, Screen.width / 3 + 10, 30), "");
+	            //GUI.Box(new Rect(Screen.width / 3, 15, (playerStats.shields / 100) * Screen.width / 3, 20), "");
 
-	            GUI.DrawTexture(new Rect(Screen.width / 2 - 20, Screen.height / 2 - 20, 40, 40), crosshair);
+				GUI.DrawTexture(new Rect(0,0,Screen.width, Screen.height), shieldBar);
+				GUI.DrawTexture(new Rect(0,0,Screen.width, Screen.height), healthBar);
+				GUI.DrawTexture(new Rect(0,0,Screen.width, Screen.height), healthShieldOutline);
+
+				GUI.color = new Color(0,0,1f,0.5f);
+	            GUI.DrawTexture(new Rect(Screen.width / 2 - 30, Screen.height / 2 - 30, 60, 60), crosshair);
+				GUI.color = Color.white;
 
 				GUI.color = new Color(1,1,1,0.2f);
 				GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height), HUDOverlay);
