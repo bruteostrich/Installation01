@@ -38,12 +38,15 @@ namespace GameLogic
 	
         void Start()
         {
+            // TODO: Right here is where we will apply the "throw" force to the RigidBody
+            // Immediately after the "Simulate" coroutine is started, which then handles the grenade up until it removes itself
 
+            StartCoroutine(Simulate());
         }
 
-        IEnumerable Simulate()
+        IEnumerator Simulate()
         {
-            yield return new WaitForSeconds(FuseTime);
+            yield return new WaitForSeconds(FuseTime); // much simpler / less code than manually subtracting time from a fuse timer
 
             Detonate();
         }
@@ -88,7 +91,7 @@ namespace GameLogic
         /// <summary>
         /// Detonates this grenade, calculates and applies all damage / physical forces
         /// </summary>
-        private void Detonate()
+        private void Detonate() 
         {
             Instantiate(ExplosionGameObject, transform.position, transform.rotation);
 
