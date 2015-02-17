@@ -23,7 +23,7 @@ namespace GameLogic
         /// <summary>
         /// Grenade fuse time in seconds
         /// </summary>
-		public float Fuse = 3;
+		public float FuseTime = 3;
 
         /// <summary>
         /// Damage radius in meters
@@ -41,41 +41,80 @@ namespace GameLogic
 
         }
 
+        IEnumerable Simulate()
+        {
+            yield return new WaitForSeconds(FuseTime);
+
+            Detonate();
+        }
+
         void Update()
         {
-            if (Fuse > 0)
+            //if (FuseTime > 0)
+            //{
+            //    FuseTime -= Time.deltaTime;
+            //}
+
+			//if(FuseTime <= 0)
+			//{
+                //Instantiate(ExplosionGameObject, transform.position,transform.rotation);
+
+                //Collider[] hits = Physics.OverlapSphere(transform.position, 10);
+                //foreach (Collider co in hits)
+                //{
+                //    if (co.gameObject.transform.root.tag == "Player")
+                //    {
+                //        Debug.Log("DAMAGE");
+                //        PhotonView photonview = co.gameObject.transform.root.GetComponent<PhotonView>();
+                //        if (photonview.isMine)
+                //        {
+                //            return;
+                //        }
+
+                //        photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, 100.0f);
+                //        DestroyObject(gameObject);
+
+                //    }
+                //    else
+                //    {
+                //        DestroyObject(gameObject);
+                //    }
+
+                //}
+                //DestroyObject(gameObject);
+			//}
+        }
+
+        /// <summary>
+        /// Detonates this grenade, calculates and applies all damage / physical forces
+        /// </summary>
+        private void Detonate()
+        {
+            Instantiate(ExplosionGameObject, transform.position, transform.rotation);
+
+            Collider[] hits = Physics.OverlapSphere(transform.position, 10);
+            foreach (Collider co in hits)
             {
-                Fuse -= Time.deltaTime;
+                if (co.gameObject.transform.root.tag == "Player")
+                {
+                    Debug.Log("DAMAGE");
+                    PhotonView photonview = co.gameObject.transform.root.GetComponent<PhotonView>();
+                    if (photonview.isMine)
+                    {
+                        return;
+                    }
+
+                    photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, 100.0f);
+                    DestroyObject(gameObject);
+
+                }
+                else
+                {
+                    DestroyObject(gameObject);
+                }
+
             }
-
-			if(Fuse <= 0)
-			{
-				Instantiate(ExplosionGameObject, transform.position,transform.rotation);
-
-				Collider[] hits = Physics.OverlapSphere(transform.position, 10);
-				foreach (Collider co in hits)
-				{
-                    if (co.gameObject.transform.root.tag == "Player")
-                    {
-                        Debug.Log("DAMAGE");
-                        PhotonView photonview = co.gameObject.transform.root.GetComponent<PhotonView>();
-                        if (photonview.isMine)
-                        {
-                            return;
-                        }
-
-                        photonview.RPC("GetHit", PhotonTargets.AllBufferedViaServer, 100.0f);
-                        DestroyObject(gameObject);
-
-                    }
-                    else
-                    {
-                        DestroyObject(gameObject);
-                    }
-
-				}
-				DestroyObject(gameObject);
-			}
+            DestroyObject(gameObject);
         }
     }
 }
